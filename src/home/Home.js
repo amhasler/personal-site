@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react'
 import '../app/App.scss';
 import Hero from './hero/Hero'
 import Trailer from './trailer/Trailer'
+import Cases from './cases/Cases'
+import Hireme from './hireme/Hireme'
+import Documents from './documents/Documents'
+import Writing from './writing/Writing'
+import PageOne from './pageone/PageOne'
 
 function Home({ showTopNavMenu }) {
   //const showNav = {
@@ -17,6 +22,11 @@ function Home({ showTopNavMenu }) {
     <>
      <Hero responsive={showTopNavMenu}/>
      <Trailer responsive={showTopNavMenu}/>
+     <Cases responsive={showTopNavMenu}/>
+     <Hireme responsive={showTopNavMenu}/>
+     <Documents responsive={showTopNavMenu}/>
+     <Writing responsive={showTopNavMenu}/>
+     <PageOne responsive={showTopNavMenu}/>
      </>
   )
 }

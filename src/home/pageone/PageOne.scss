@@ -1,0 +1,63 @@
+.pageOne {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  //margin: 0px auto 50px;
+  float: none;
+  flex-direction: column;
+  background-color: #F5F5F5;
+  h5 {
+    font-weight: 300;
+    font-style: italic;
+    color: #8D1D28;
+    font-size: 2.75em;
+  }
+  .social {
+    width:185px;
+    height: 185px;
+  }
+  svg {
+    //width: 1000px;
+    //height: 200px;
+    display: block;
+  }
+  h1 {
+    font-weight: 500;
+    text-align:center;
+    margin-bottom: -50px;
+  }
+  path {
+    fill: transparent;
+  }
+
+  text {
+    font-family: 'Fanwood Text', serif;
+    font-size: 1.75em;
+    text-align:center;
+    fill: #8D1D28;
+  }
+  .columns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:60%;
+  }
+  .columnContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 45%;
+    //margin: 0px auto 50px;
+    float: none;
+    flex-direction: column;
+    div {
+      background-repeat: no-repeat;
+    }
+    #phone {
+      background-size:cover;
+      width: 285px;
+      height: 580px;
+    }
+  }
+}

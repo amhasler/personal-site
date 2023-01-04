@@ -5,14 +5,15 @@ import Footer from '../footer/Footer';
 import Home from '../home/Home'
 import Hireme from '../hireme/Hireme'
 import About from '../about/About'
-import Case1 from '../case1/Case1'
-import Case2 from '../case2/Case2'
-import Case3 from '../case3/Case3'
-import Shorts from '../shorts/Shorts'
+import Case1 from '../cases/case1/Case1'
+import Case2 from '../cases/case2/Case2'
+import Case3 from '../cases/case3/Case3'
+import Shorts from '../cases/shorts/Shorts'
 import CV from '../cv/CV'
 import Resume from '../resume/Resume'
 import Portfolio from '../portfolio/Portfolio'
 import CssBaseline from '@mui/material/CssBaseline';
+import {WistiaProvider} from '@wistia/react-embeds'
 
 import {
   BrowserRouter as Router,
@@ -41,7 +42,7 @@ function App() {
   }
 
   return (
-    <>
+    <WistiaProvider>
     <CssBaseline />
     <Router>
       <div className="content">
@@ -61,7 +62,7 @@ function App() {
       </div>
       <Footer showTopNavMenu={responsive.showTopNavMenu}/>
     </Router>
-    </>
+    </WistiaProvider>
   );
 }
 

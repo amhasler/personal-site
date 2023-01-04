@@ -1,0 +1,38 @@
+.testimonial {
+  background-color: #F5F5F5;
+  position:relative;
+  //height: 200px;
+  margin-bottom: 100px;
+  span {
+    display:block;
+    text-align: center;
+  }
+  .circle {
+    //position: absolute;
+    //left: 50%;
+    //transform: translate(-50%, -50%);
+    padding-top:30px;
+    height: 140px;
+    width: 280px;
+    border-radius: 150px 150px 0 0;
+    background-color: #B28859;
+    float:none;
+    margin:0px auto;
+  }
+  .paragraph {
+    background-color:#ffffff;
+    width: 1050px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 0px auto;
+    float:none;
+    //position: absolute;
+    //left: 50%;
+    //top: 95%;
+    //transform: translate(-50%, -50%);
+    padding: 10px 10px 10px;
+    p {
+      font-size:1.25em;
+      margin:0px;
+    }
+  }
+}

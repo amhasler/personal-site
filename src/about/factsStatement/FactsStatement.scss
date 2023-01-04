@@ -1,0 +1,34 @@
+.factsStatement {
+  overflow:auto;
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(245,245,245,1) 0%, rgba(255,255,255,1) 50%);
+  .container {
+    max-width: 1050px;
+    margin: 0px auto;
+    float: none;
+  }
+  strong, span, p {
+    font-size: 1.5em;
+  }
+  strong {
+    margin-right: 15px;
+  }
+  p {
+    margin-top: 0px;
+  }
+  h4 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  .facts {
+    float: left;
+    margin-right: 1%;
+  }
+  .statement {
+    float: left;
+  }
+  .headshot {
+    background-size:contain;
+    background-repeat: no-repeat;
+  }
+}

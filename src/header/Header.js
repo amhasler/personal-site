@@ -106,7 +106,7 @@ function Header({ showTopNavMenu }) {
           open={open}
         >
           <div style={{paddingLeft:'10px', paddingTop:'5px'}}>
-            <IconButton onClick={handleDrawerClose} style={{width:'45px'}}>
+            <IconButton onClick={handleDrawerClose} style={{width:'45px', height:'45px'}}>
               <ChevronRightIcon />
             </IconButton>
             <span onClick={handleDrawerClose} style={{fontSize: '1em', fontFamily: 'Cabin', marginLeft:'5px', cursor: 'pointer'}}>CLOSE</span>
@@ -157,7 +157,7 @@ function Header({ showTopNavMenu }) {
               </li>
             </ul>
           </div>
-          <div id="drawer-contact-container">
+          <div id="drawer-contact-container" style={{paddingLeft:'10px'}}>
            <ul>
             <li><div id="mail" style={{ backgroundImage:`url(${mail})`, backgroundRepeat:"no-repeat",backgroundSize:"contain",
                height:42,width:42  }}/></li>

@@ -41,7 +41,6 @@ function App() {
   }
 
   return (
-    <WistiaProvider>
     <CssBaseline />
     <Router>
       <div className="content">
@@ -61,7 +60,6 @@ function App() {
       </div>
       <Footer showTopNavMenu={responsive.showTopNavMenu}/>
     </Router>
-    </WistiaProvider>
   );
 }
 

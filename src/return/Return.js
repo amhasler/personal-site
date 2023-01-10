@@ -17,7 +17,7 @@ function Footer({ showTopNavMenu, gray }) {
   //}
 
   const main = {
-    backgroundColor: gray ? "#f5f5f5" : "white"
+    backgroundColor: gray ? "#f5f5f5" : "#ffffff"
   }
 
   return (

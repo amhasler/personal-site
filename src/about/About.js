@@ -3,6 +3,7 @@ import '../app/App.scss';
 import Trailer from './trailer/Trailer'
 import FactsStatement from './factsStatement/FactsStatement'
 import Testimonial from './testimonial/Testimonial'
+import Return from '../return/Return'
 
 const query = `
 {
@@ -95,6 +96,7 @@ function About({ showTopNavMenu }) {
        <Testimonial name={page.testimonial3Name} title={page.testimonial3Title} company={page.testimonial3Company} testimonial={page.testimonial3} responsive={showTopNavMenu}/>
        <Testimonial name={page.testimonial4Name} title={page.testimonial4Title} company={page.testimonial4Company} testimonial={page.testimonial4} responsive={showTopNavMenu}/>
       </div>
+      <Return gray={true} />
      </>
   )
 }

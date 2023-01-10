@@ -26,6 +26,7 @@ body {
 
 h1 {
   font-size: 3.5em;
+  font-weight: 300;
   font-family: 'Fanwood Text', serif;
   color: $light-maroon;
 }
@@ -49,6 +50,8 @@ h4 {
 h5 {
   font-family: 'Fanwood Text', serif;
   font-size: 2.25em;
+  font-weight: 300;
+  margin-bottom: 5px;
 }
 
 p {

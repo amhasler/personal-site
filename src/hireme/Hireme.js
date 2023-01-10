@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import '../app/App.scss';
+import Return from '../return/Return'
 
 const query = `
 {
@@ -96,6 +97,7 @@ function Hireme({ showTopNavMenu }) {
       <div className="illustratedCameo" style={cameo}/>
       <h1 style={hireMeHeader}>Hiring Adam: A Love Story</h1>
       <div className="comic" style={comic}/>
+      <Return gray={false} />
      </div>
   )
 }

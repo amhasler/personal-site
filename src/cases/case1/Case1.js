@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import '../../app/App.scss';
 import CaseHero from '../hero/CaseHero'
 import CaseModule from '../module/CaseModule'
-import Breakdown from '../breakdown/Breakdown'
+import Return from '../../return/Return'
 
 const query = `
 {
@@ -18,15 +18,13 @@ const query = `
         width
         height
       }
-      heroText
-      breakdown1Number
-      breakdown1Label
-      breakdown2Number
-      breakdown2Label
-      breakdown3Number
-      breakdown3Label
-      module1Text
-      module1Label
+      heroText {
+        json
+      }
+      module1Text {
+        json
+      }
+      module1Title
       module1Image {
         title
         description
@@ -37,8 +35,10 @@ const query = `
         width
         height
       }
-      module2Text
-      module2Label
+      module2Text {
+        json
+      }
+      module2Title
       module2Image {
         title
         description
@@ -49,8 +49,10 @@ const query = `
         width
         height
       }
-      module3Text
-      module3Label
+      module3Text {
+        json
+      }
+      module3Title
       module3Image {
         title
         description
@@ -88,23 +90,49 @@ function Case1({ showTopNavMenu }) {
 
         // rerender the entire component with new data
         setPage(data.case1Collection.items[0]);
+
+
       });
   }, []);
+
+
 
   // show a loading screen case the data hasn't arrived yet
   if (!page) {
     return "Loading...";
   }
 
+  const modules = {
+    backgroundColor: '#f5f5f5'
+  }
+
+  const rule = {
+    width: "1080px"
+  }
+
+  const header = {
+    textAlign: 'center'
+  }
+
   return (
     <>
+     <h1 style={header}>The Case of the Scientific Secrets</h1>
      <CaseHero responsive={showTopNavMenu} image={page.heroImage.url} text={page.heroText} />
-     <Breakdown oneNumber={page.breakdown1Number} oneText={page.breakdown1Text} twoNumber={page.breakdown2Number} twoText={page.breakdown2Text}  threeNumber={page.breakdown3Number} threeText={page.breakdown3Text} />
-     <CaseModule left={true} text={page.module1Text} label={page.module1Label} image={page.module1Image.url} />
-     <CaseModule left={false} text={page.module2Text} label={page.module2Label} image={page.module2Image.url}  />
-     <CaseModule left={true} text={page.module3Text} label={page.module3Label} image={page.module3Image.url} />
+     <div className='modules' style={modules}>
+       <CaseModule left={'left'} text={page.module1Text} title={page.module1Title} image={page.module1Image} />
+       <hr style={rule} />
+       <CaseModule left={'center'} text={page.module2Text} title={page.module2Title} image={page.module2Image} />
+       <hr style={rule} />
+       <CaseModule left={'right'} text={page.module3Text} title={page.module3Title} image={page.module3Image} />
+      </div>
+      <Return gray={true} />
     </>
   )
 }
 
 export default Case1;
+
+//<Breakdown oneNumber={page.breakdown1Number} oneText={page.breakdown1Text} twoNumber={page.breakdown2Number} twoText={page.breakdown2Text}  threeNumber={page.breakdown3Number} threeText={page.breakdown3Text} />
+//<CaseModule left={true} text={page.module1Text} label={page.module1Label} image={page.module1Image.url} />
+//<CaseModule left={false} text={page.module2Text} label={page.module2Label} image={page.module2Image.url}  />
+//<CaseModule left={true} text={page.module3Text} label={page.module3Label} image={page.module3Image.url} />

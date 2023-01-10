@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import '../../app/App.scss';
 import './Trailer.scss'
 import { NavLink } from 'react-router-dom'
-//import {WistiaPlayer} from '@wistia/react-embeds'
 import WistiaEmbed from './WistiaEmbed'
 
 const query = `

@@ -13,7 +13,6 @@ import CV from '../cv/CV'
 import Resume from '../resume/Resume'
 import Portfolio from '../portfolio/Portfolio'
 import CssBaseline from '@mui/material/CssBaseline';
-import {WistiaProvider} from '@wistia/react-embeds'
 
 import {
   BrowserRouter as Router,

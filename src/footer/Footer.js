@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react'
 import '../app/App.scss';
 import './Footer.scss'
 import image from "../img/logo.png";

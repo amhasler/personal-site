@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react'
 import '../app/App.scss';
 import './Header.scss'
 import BasicMenu from '../BasicMenu'
@@ -10,16 +10,25 @@ import instagram from "../img/instagram.png"
 import twitter from "../img/twitter.png"
 import linkedin from "../img/linkedin.png"
 import hamburger from "../img/hamburger.png"
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import IconButton from '@mui/material/IconButton';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 function Header({ showTopNavMenu }) {
   const [open, setOpen] = React.useState(false);
+  const [anchorEl, setAnchorEl] = useState(0)
+  const dropdownOpen = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   const showNav = {
     display: showTopNavMenu ? 'flex' : 'none'
@@ -77,7 +86,27 @@ function Header({ showTopNavMenu }) {
          <li><NavLink to="/about">story</NavLink></li>
          <BasicMenu trigger={"works"} items={[{display: 'Case 1', link: '/case1'}, {display: 'Case 2', link: '/case2'}, {display: 'Case 3', link: '/case3'}, {display: 'Short Stories', link: '/shorts'}]}/>
          <li><NavLink to="/hireme">hire me</NavLink></li>
-         <BasicMenu trigger={"documents"} items={[{display: 'Curriculum Vitae', link: '/cv'}, {display: 'Résumé', link: '/resume'}, {display: 'Portfolio', link: '/portfolio'}]}/>
+         <li
+           //id="basic-button"
+           aria-controls={dropdownOpen ? 'basic-menu' : undefined}
+           onClick={handleClick}
+         >
+           documents
+           <ExpandMoreIcon style={{verticalAlign:'-5px'}}/>
+         </li>
+         <Menu
+           id="basic-menu"
+           anchorEl={anchorEl}
+           open={dropdownOpen}
+           onClose={handleClose}
+           MenuListProps={{
+             'aria-labelledby': 'basic-button',
+           }}
+         >
+           <MenuItem onClick={handleClose}><a href="https://assets.ctfassets.net/8sj1lftovdi0/7EzPspr7kRXint13NhMTHV/2ab239b8fb02967788b90ff41a099519/CV-AdamHasler.pdf" target="_blank" rel="noreferrer" style={{textDecoration:'none', color:'#2B353D'}}>CV</a></MenuItem>
+           <MenuItem onClick={handleClose}><a href="https://assets.ctfassets.net/8sj1lftovdi0/LkmvJdAzC3ciMuCu6I6Qs/b228429999103de0093e9891c5785a2d/resume-AHaslser.pdf" target="_blank" rel="noreferrer" style={{textDecoration:'none', color:'#2B353D'}}>Résumé</a></MenuItem>
+           <MenuItem onClick={handleClose}><a href="https://assets.ctfassets.net/8sj1lftovdi0/3pAPaB8PznQcIzktaMYwUO/077cf3ecebcac1950a54e3cbc14fd332/Portfolio_AMHasler.pdf" target="_blank" rel="noreferrer" style={{textDecoration:'none', color:'#2B353D'}}>Portfolio</a></MenuItem>
+         </Menu>
        </nav>
        <div id="nav-icon" style={alignLogo} />
        <div id="contact-container" style={showContact}>

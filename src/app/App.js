@@ -9,16 +9,12 @@ import Case1 from '../cases/case1/Case1'
 import Case2 from '../cases/case2/Case2'
 import Case3 from '../cases/case3/Case3'
 import Shorts from '../cases/shorts/Shorts'
-import CV from '../cv/CV'
-import Resume from '../resume/Resume'
-import Portfolio from '../portfolio/Portfolio'
 import CssBaseline from '@mui/material/CssBaseline';
 
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 function App() {
@@ -54,8 +50,6 @@ function App() {
         <Route path="/case3" element={<Case3 showTopNavMenu={responsive.showTopNavMenu} />} />
         <Route path="/shorts" element={<Shorts showTopNavMenu={responsive.showTopNavMenu} />} />
         <Route path="/hireme" element={<Hireme showTopNavMenu={responsive.showTopNavMenu} />} />
-        <Route path="/cv" element={<CV showTopNavMenu={responsive.showTopNavMenu} />} />
-        <Route path="/resume" element={<Resume showTopNavMenu={responsive.showTopNavMenu} />} />
 
       </Routes>
       </div>

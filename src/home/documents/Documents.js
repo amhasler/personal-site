@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import '../../app/App.scss';
 import './Documents.scss'
 import image from "../../img/arrow.png";
-import { NavLink } from 'react-router-dom'
 
 const query = `
 {
@@ -64,16 +63,18 @@ function Documents({ responsive }) {
       <div className="boxContainer" style={boxContainer}>
         <div className="box">
           <h2>Curriculum Vitae</h2>
-          <p>{page.cvText}</p>
-          <div className="link">
-            <span>View now</span>
-            <div className="arrow" style={arrow} />
-          </div>
+					<a href="https://assets.ctfassets.net/8sj1lftovdi0/7EzPspr7kRXint13NhMTHV/2ab239b8fb02967788b90ff41a099519/CV-AdamHasler.pdf" target="_blank" rel="noreferrer">
+	          <p>{page.cvText}</p>
+	          <div className="link">
+	            <span>View now</span>
+	            <div className="arrow" style={arrow} />
+	          </div>
+					</a>
         </div>
         <div className="box">
           <h2>Résumé</h2>
           <p>{page.resumeText}</p>
-          <a href="https://assets.ctfassets.net/8sj1lftovdi0/6QIRGQqFdbuZ4WBIUgnjag/f37ec309aaea15721752333cceffcac8/resumev2.pdf" target="_blank">
+          <a href="https://assets.ctfassets.net/8sj1lftovdi0/LkmvJdAzC3ciMuCu6I6Qs/b228429999103de0093e9891c5785a2d/resume-AHaslser.pdf" target="_blank" rel="noreferrer">
             <div className="link">
               <span>View now</span>
               <div className="arrow" style={arrow} />
@@ -83,10 +84,12 @@ function Documents({ responsive }) {
         <div className="box">
           <h2>Portfolio of Work</h2>
           <p>{page.portfolioText}</p>
-          <div className="link">
-            <span>View now</span>
-            <div className="arrow" style={arrow} />
-          </div>
+					<a href="https://assets.ctfassets.net/8sj1lftovdi0/3pAPaB8PznQcIzktaMYwUO/077cf3ecebcac1950a54e3cbc14fd332/Portfolio_AMHasler.pdf" target="_blank" rel="noreferrer">
+	          <div className="link">
+	            <span>View now</span>
+	            <div className="arrow" style={arrow} />
+	          </div>
+					</a>
         </div>
       </div>
      </div>

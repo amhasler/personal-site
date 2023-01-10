@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import '../../app/App.scss';
 import './FactsStatement.scss'
-import { NavLink } from 'react-router-dom'
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
 
 const query = `

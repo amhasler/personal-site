@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import '../../app/App.scss';
 import './Trailer.scss'
-import { NavLink } from 'react-router-dom'
 import WistiaEmbed from './WistiaEmbed'
 
 const query = `
@@ -44,15 +43,6 @@ function Trailer({ responsive }) {
   if (!page) {
     return "Loading...";
   }
-
-  const image = {
-    filter:'blur(5px)',
-    height:'100%',
-    objectFit:'contain',
-    width:'745px',
-    height:'420px'
-  }
-
 
   return (
     <div className="aboutTrailer">

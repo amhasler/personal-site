@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react'
 import '../../app/App.scss';
 import './Testimonial.scss';
 import quotes from "../../img/quotes.png";
-import { NavLink } from 'react-router-dom'
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
 
 

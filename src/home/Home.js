@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react'
 import '../app/App.scss';
 import Hero from './hero/Hero'
 import Trailer from './trailer/Trailer'

@@ -96,15 +96,15 @@ function Documents({ responsive }) {
       <h2>{page.subhead}</h2>
       <div className="boxContainer" style={boxContainer}>
         <div className="box">
-            <a href="https://medium.com/@amhasler/6c89e678aa8a" target="_blank"><div className="boxThumbnail" style={box1}/></a>
+            <a href="https://medium.com/@amhasler/6c89e678aa8a" target="_blank" rel="noreferrer"><div className="boxThumbnail" style={box1}/></a>
             <p>{page.title1}</p>
         </div>
         <div className="box">
-          <a href="https://medium.com/user-experience-design-1/human-centered-government-4502599daf0f"><div className="boxThumbnail" style={box2}/></a>
+          <a href="https://medium.com/user-experience-design-1/human-centered-government-4502599daf0f" rel="noreferrer"><div className="boxThumbnail" style={box2}/></a>
           <p>{page.title2}</p>
         </div>
         <div className="box">
-          <a href="https://medium.com/@amhasler/heirlooms-the-elephant-in-the-room-8a6cec310e2e"><div className="boxThumbnail" style={box3}/></a>
+          <a href="https://medium.com/@amhasler/heirlooms-the-elephant-in-the-room-8a6cec310e2e" rel="noreferrer"><div className="boxThumbnail" style={box3}/></a>
           <p>{page.title3}</p>
         </div>
       </div>

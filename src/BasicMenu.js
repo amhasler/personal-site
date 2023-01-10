@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import Button from '@mui/material/Button';
+import React, { useState } from 'react'
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -24,8 +23,6 @@ function BasicMenu({ trigger, items }) {
       <li
         //id="basic-button"
         aria-controls={open ? 'basic-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
         {trigger}

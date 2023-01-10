@@ -41,6 +41,7 @@ function App() {
   }
 
   return (
+    <>
     <CssBaseline />
     <Router>
       <div className="content">
@@ -60,6 +61,7 @@ function App() {
       </div>
       <Footer showTopNavMenu={responsive.showTopNavMenu}/>
     </Router>
+    </>
   );
 }
 

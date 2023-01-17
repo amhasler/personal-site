@@ -57,6 +57,10 @@ function Testimonial({ responsive, name, title, company, testimonial }) {
     marginTop:'10px'
   }
 
+  const paragraph = {
+    width: !responsive && '95%'
+  }
+
 
   return (
     <div className="testimonial">
@@ -65,7 +69,7 @@ function Testimonial({ responsive, name, title, company, testimonial }) {
         <span style={titleStyle}>{title}</span>
         <span style={companyStyle}>{company}</span>
       </div>
-      <div className="paragraph">
+      <div className="paragraph" style={paragraph}>
         <div style={quoteStyle} />
         {documentToReactComponents(testimonial.json)}
       </div>

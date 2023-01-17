@@ -143,7 +143,7 @@ function Header({ showTopNavMenu }) {
           <hr style={{width:'100%', marginBottom:'-10px'}}/>
           <div className="drawerContainer">
             <ul style={{paddingLeft:'10px'}}>
-              <li style={menuList}><NavLink to="/about">story</NavLink></li>
+              <li style={menuList} onClick={handleDrawerClose}><NavLink to="/about">story</NavLink></li>
               <li>
                 <Accordion style={{boxShadow:'none', fontSize:'1.25em', textTransform:'uppercase', borderBottom: '1px solid #585858'}}>
                   <AccordionSummary
@@ -156,10 +156,10 @@ function Header({ showTopNavMenu }) {
                   </AccordionSummary>
                   <AccordionDetails>
                     <ul>
-                      <li style={{marginBottom:'10px'}}><NavLink to="/case1">case1</NavLink></li>
-                      <li style={{marginBottom:'10px'}}><NavLink to="/case2">case2</NavLink></li>
-                      <li style={{marginBottom:'10px'}}><NavLink to="/case3">case3</NavLink></li>
-                      <li><NavLink to="/shorts">selected shorts</NavLink></li>
+                      <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/case1">case1</NavLink></li>
+                      <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/case2">case2</NavLink></li>
+                      <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/case3">case3</NavLink></li>
+                      <li onClick={handleDrawerClose}><NavLink to="/shorts">selected shorts</NavLink></li>
                     </ul>
                   </AccordionDetails>
                   </Accordion>
@@ -177,9 +177,9 @@ function Header({ showTopNavMenu }) {
                   </AccordionSummary>
                   <AccordionDetails>
                     <ul style={{paddingLeft:'10px'}}>
-                      <li style={{marginBottom:'10px'}}><NavLink to="/cv">curriculum vitae</NavLink></li>
-                      <li style={{marginBottom:'10px'}}><NavLink to="/resume">Résumé</NavLink></li>
-                      <li style={{marginBottom:'10px'}}><NavLink to="/portfolio">portfolio</NavLink></li>
+                      <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><a href="https://assets.ctfassets.net/8sj1lftovdi0/7EzPspr7kRXint13NhMTHV/2ab239b8fb02967788b90ff41a099519/CV-AdamHasler.pdf" target="_blank" rel="noreferrer" style={{textDecoration:'none', color:'#2B353D'}}>curriculum vitae</a></li>
+                      <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><a href="https://assets.ctfassets.net/8sj1lftovdi0/LkmvJdAzC3ciMuCu6I6Qs/b228429999103de0093e9891c5785a2d/resume-AHaslser.pdf" target="_blank" rel="noreferrer" style={{textDecoration:'none', color:'#2B353D'}}>Résumé</a></li>
+                      <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><a href="https://assets.ctfassets.net/8sj1lftovdi0/3pAPaB8PznQcIzktaMYwUO/077cf3ecebcac1950a54e3cbc14fd332/Portfolio_AMHasler.pdf" target="_blank" rel="noreferrer" style={{textDecoration:'none', color:'#2B353D'}}>portfolio</a></li>
                     </ul>
                   </AccordionDetails>
                   </Accordion>

@@ -107,7 +107,7 @@ function Case3({ showTopNavMenu }) {
   }
 
   const rule = {
-    width: "1080px"
+    width: "100%"
   }
 
   const header = {

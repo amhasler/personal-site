@@ -1,14 +1,11 @@
 .caseModule {
   padding: 60px 0px 50px;
-  height: 720px;
   .moduleContainer {
     float: none;
     margin: 0px auto;
     position:relative;
   }
   .circle {
-    height: 600px;
-    width: 600px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 50%;
     position: absolute;
@@ -22,7 +19,6 @@
     background-color: white;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 10px 20px;
-    margin-top: 120px;
   }
   p {
     font-size: 22px;

@@ -127,24 +127,30 @@ function Trailer({ responsive }) {
   }
 
   const caseContainer = {
-    padding: responsive ? '0px 100px 0px' : '0px 0px 0px 18%',
-    width: !responsive && '75%',
+    padding: responsive ? '0px 100px 0px' : '0px 0px 0px 5%',
+    width: !responsive && '98%',
     flexWrap: !responsive && "wrap"
     //flexDirection: responsive ? 'row' : 'column',
   }
 
-  const link = {
-    //margin: '0px 1%'
+  const shelf = {
+    width: responsive ? '48%' : '100%'
   }
+
+	const link = {}
 
   return (
     <div className="cases" style={main}>
       <h5 style={subhead}>{page.subhead }</h5>
       <div className="caseContainer" style={caseContainer}>
-        <NavLink style={link} to="/case1"><div className="case1" style={case1}/></NavLink>
-        <NavLink style={link} to="/case2"><div className="case2" style={case2}/></NavLink>
-        <NavLink style={link} to="/case3"><div className="case3" style={case3} /></NavLink>
-        <NavLink style={link} to="/shorts"><div className="shorts" style={shorts} /></NavLink>
+				<div style={shelf}>
+        <NavLink style={link} to="/case1"><div className="case1 case" style={case1}/></NavLink>
+        <NavLink style={link} to="/case2"><div className="case2 case" style={case2}/></NavLink>
+				</div>
+				<div style={shelf}>
+        <NavLink style={link} to="/case3"><div className="case3 case" style={case3} /></NavLink>
+        <NavLink style={link} to="/shorts"><div className="shorts case" style={shorts} /></NavLink>
+				</div>
       </div>
     </div>
   )

@@ -7,14 +7,23 @@
 
   .caseContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
+    a {
+      display: block;
+      //margin: 0px 10%;
+    }
+    & > div {
+      display: flex;
+      padding-left: 1%;
+      gap: 5%;
+    }
     //padding: 0px 100px 0px;
     //.subcontainer {
       //display: flex;
       //justify-content: space-between;
       //align-items: center;
-    div {
+    .case {
       background-repeat: no-repeat;
       background-size:contain;
       background-repeat: no-repeat;

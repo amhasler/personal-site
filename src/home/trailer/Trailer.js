@@ -58,8 +58,8 @@ function Trailer({ responsive }) {
     backgroundImage:`url(${page.trailerThumbnail.url})`,
     backgroundRepeat:"no-repeat",
     backgroundSize:"cover",
-    height:'390px',
-    width: '700px',
+    height: responsive ? '390px' : '280px',
+    width: responsive ? '700px' : '500px',
     border: '1px solid #585858'
   }
 

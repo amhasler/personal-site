@@ -6,16 +6,17 @@ import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
 function CaseHero({ responsive, image, text }) {
 
   const imageContainer = {
-    width: '407px',
-    height: '570px',
-    float: 'left',
-    marginRight: '30px'
+    width: '370px',
+    height: '530px',
+    float: responsive ? 'left' : 'none',
+    margin: responsive ? '0px 30px 0px 0px' : '0px auto 50px'
   }
 
   const paragraphContainer = {
-    width: '640px',
-    height: '599px',
+    width: responsive ? '640px' : '100%',
+    height: responsive ? '599px' : 'auto',
     float: 'left',
+    padding: '0px 20px'
   }
 
   const imageStyle = {

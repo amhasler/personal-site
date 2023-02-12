@@ -14,7 +14,7 @@ function CaseHero({ responsive, image, text }) {
 
   const paragraphContainer = {
     width: responsive ? '640px' : '100%',
-    height: responsive ? '599px' : 'auto',
+    height: responsive ? '620px' : 'auto',
     float: 'left',
     padding: '0px 20px'
   }

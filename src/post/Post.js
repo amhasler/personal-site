@@ -26,10 +26,9 @@ function Post({ showTopNavMenu }) {
     }
   }`;
 
-
+  const { slug } = useParams();
 
   useEffect(() => {
-    const { slug } = useParams();
 
     const variables = { slug: slug }
 
@@ -54,7 +53,7 @@ function Post({ showTopNavMenu }) {
         setPage(data.blogPostCollection.items[0]);
 
       });
-  }, []);
+  }, [query, slug]);
 
 
 

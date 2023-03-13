@@ -73,19 +73,21 @@ function Hireme({ showTopNavMenu }) {
   }
 
   const comic = {
-    backgroundImage:`url(${page.comic.url})`,
+    //backgroundImage:`url(${page.comic.url})`,
     //maxWidth: '90%',
-    height: showTopNavMenu ? '2300px' : '1030px',
+    //height: showTopNavMenu ? '2300px' : '1030px',
     width: '100%',
-    maxWidth: showTopNavMenu ? '1210px' : '545px',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
+    //backgroundRepeat: 'no-repeat',
+    //backgroundSize: 'cover',
     margin: '0px auto',
     float: 'none'
   }
 
   const hireMePage = {
-    paddingTop: '30px'
+    paddingTop: '30px',
+    maxWidth: showTopNavMenu ? '1210px' : '545px',
+    margin: '0px auto',
+    float: 'none'
   }
 
   const hireMeHeader = {
@@ -102,7 +104,7 @@ function Hireme({ showTopNavMenu }) {
      <div className="hireMePage" style={hireMePage}>
       <div className="illustratedCameo" style={cameo}/>
       <h1 style={hireMeHeader}>Hiring Adam: A Love Story</h1>
-      <div className="comic" style={comic}/>
+      <img style={comic} src={page.comic.url} />
       <div className="formContainer">
         <h2 style={formTitle}>Let's keep talking</h2>
         <HubspotForm

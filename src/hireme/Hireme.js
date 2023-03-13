@@ -104,7 +104,7 @@ function Hireme({ showTopNavMenu }) {
      <div className="hireMePage" style={hireMePage}>
       <div className="illustratedCameo" style={cameo}/>
       <h1 style={hireMeHeader}>Hiring Adam: A Love Story</h1>
-      <img style={comic} src={page.comic.url} />
+      <img style={comic} src={page.comic.url} alt="about adam comic" />
       <div className="formContainer">
         <h2 style={formTitle}>Let's keep talking</h2>
         <HubspotForm

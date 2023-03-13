@@ -26,11 +26,13 @@ function Post({ showTopNavMenu }) {
     }
   }`;
 
-  const { slug } = useParams();
 
-  const variables = { slug: slug }
 
   useEffect(() => {
+    const { slug } = useParams();
+
+    const variables = { slug: slug }
+
     window
       .fetch(`https://graphql.contentful.com/content/v1/spaces/8sj1lftovdi0/`, {
         method: "POST",
@@ -50,8 +52,6 @@ function Post({ showTopNavMenu }) {
 
         // rerender the entire component with new data
         setPage(data.blogPostCollection.items[0]);
-
-        console.log(page)
 
       });
   }, []);

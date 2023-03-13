@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import '../app/App.scss';
-import Return from '../return/Return'
 import { Link } from 'react-router-dom'
 
 const query = `

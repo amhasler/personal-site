@@ -5,7 +5,7 @@
   padding: 10px 15px;
   li {
     list-style: none;
-    margin-right: 10px;
+    margin-right: 30px;
     cursor: pointer;
   }
 
@@ -15,7 +15,8 @@
 
   #main-nav {
     font-size: 1.25em;
-    padding-top:10px;
+    //margin-top:-10px;
+    margin-left: 20px;
     li {
       text-transform:uppercase;
       a {

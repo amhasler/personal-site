@@ -38,10 +38,7 @@ function Header({ showTopNavMenu }) {
   }
 
   const alignLogo = {
-    position: showTopNavMenu ? 'absolute' : 'inherit',
-    left: showTopNavMenu ? '50%' : 'auto',
-    top: showTopNavMenu ? '2%' : 'auto',
-    transform: showTopNavMenu ? 'translateX(-50%)' : 'none',
+    float: 'left',
     backgroundImage:`url(${image})`,
     backgroundRepeat:"no-repeat",
     backgroundSize:"contain",
@@ -82,6 +79,7 @@ function Header({ showTopNavMenu }) {
 
   return (
      <header className="site-header">
+       <NavLink to="/"><div id="nav-icon" style={alignLogo} /></NavLink>
        <nav id="main-nav" style={showNav}>
          <li><NavLink to="/about">story</NavLink></li>
          <BasicMenu trigger={"works"} items={[{display: 'Case 1', link: '/case1'}, {display: 'Case 2', link: '/case2'}, {display: 'Case 3', link: '/case3'}, {display: 'Short Stories', link: '/shorts'}]}/>
@@ -94,6 +92,8 @@ function Header({ showTopNavMenu }) {
            documents
            <ExpandMoreIcon style={{verticalAlign:'-5px'}}/>
          </li>
+
+         <BasicMenu trigger={"writing"} items={[{display: 'Adventure', link: '/post/badges1'}]}/>
          <Menu
            id="basic-menu"
            anchorEl={anchorEl}
@@ -108,7 +108,6 @@ function Header({ showTopNavMenu }) {
            <MenuItem onClick={handleClose}><a href="https://assets.ctfassets.net/8sj1lftovdi0/3pAPaB8PznQcIzktaMYwUO/077cf3ecebcac1950a54e3cbc14fd332/Portfolio_AMHasler.pdf" target="_blank" rel="noreferrer" style={{textDecoration:'none', color:'#2B353D'}}>Portfolio</a></MenuItem>
          </Menu>
        </nav>
-       <div id="nav-icon" style={alignLogo} />
        <div id="contact-container" style={showContact}>
         <ul>
          <li><div id="mail" style={{ backgroundImage:`url(${mail})`, backgroundRepeat:"no-repeat",backgroundSize:"contain",
@@ -156,9 +155,9 @@ function Header({ showTopNavMenu }) {
                   </AccordionSummary>
                   <AccordionDetails>
                     <ul>
-                      <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/case1">case1</NavLink></li>
-                      <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/case2">case2</NavLink></li>
-                      <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/case3">case3</NavLink></li>
+                      <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/case1">Case 1</NavLink></li>
+                      <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/case2">Case 2</NavLink></li>
+                      <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/case3">Case 3</NavLink></li>
                       <li onClick={handleDrawerClose}><NavLink to="/shorts">selected shorts</NavLink></li>
                     </ul>
                   </AccordionDetails>
@@ -180,6 +179,24 @@ function Header({ showTopNavMenu }) {
                       <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><a href="https://assets.ctfassets.net/8sj1lftovdi0/7EzPspr7kRXint13NhMTHV/2ab239b8fb02967788b90ff41a099519/CV-AdamHasler.pdf" target="_blank" rel="noreferrer" style={{textDecoration:'none', color:'#2B353D'}}>curriculum vitae</a></li>
                       <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><a href="https://assets.ctfassets.net/8sj1lftovdi0/LkmvJdAzC3ciMuCu6I6Qs/b228429999103de0093e9891c5785a2d/resume-AHaslser.pdf" target="_blank" rel="noreferrer" style={{textDecoration:'none', color:'#2B353D'}}>Résumé</a></li>
                       <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><a href="https://assets.ctfassets.net/8sj1lftovdi0/3pAPaB8PznQcIzktaMYwUO/077cf3ecebcac1950a54e3cbc14fd332/Portfolio_AMHasler.pdf" target="_blank" rel="noreferrer" style={{textDecoration:'none', color:'#2B353D'}}>portfolio</a></li>
+                    </ul>
+                  </AccordionDetails>
+                  </Accordion>
+              </li>
+
+              <li>
+                <Accordion style={{boxShadow:'none', fontSize:'1.25em', textTransform:'uppercase', borderBottom: '1px solid #585858'}}>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                    style={{paddingLeft:'0px'}}
+                  >
+                    writing
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <ul>
+                      <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/post/badges1">Adventure</NavLink></li>
                     </ul>
                   </AccordionDetails>
                   </Accordion>
@@ -206,3 +223,59 @@ function Header({ showTopNavMenu }) {
 export default Header;
 
 //<nav id="navigation">{navMenuItems}</nav>//
+
+//<BasicMenu trigger={"business"} items={[{display: 'Spofford A&I (Coming Soon)', link: '/spofford'}, {display: 'AFAR (Coming Soon)', link: '/afar'}, {display: 'Florecer Farms and Factory (Coming Soon)', link: '/florecer'}]}/>
+
+/*
+<li>
+  <Accordion style={{boxShadow:'none', fontSize:'1.25em', textTransform:'uppercase', borderBottom: '1px solid #585858'}}>
+    <AccordionSummary
+      expandIcon={<ExpandMoreIcon />}
+      aria-controls="panel1a-content"
+      id="panel1a-header"
+      style={{paddingLeft:'0px'}}
+    >
+      business
+    </AccordionSummary>
+    <AccordionDetails>
+      <ul>
+        <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/spofford">Spofford A&I (Coming Soon)</NavLink></li>
+        <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/afar">AFAR (Coming Soon)</NavLink></li>
+        <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/florecer">Florecer Farms and Factory (Coming Soon)</NavLink></li>
+      </ul>
+    </AccordionDetails>
+    </Accordion>
+</li>
+*/
+
+//<BasicMenu trigger={"pillars"} items={[{display: 'Design for Sustainability', link: '/sustainability'}, {display: 'Mind and Emotion', link: '/mentalhealth'}, {display: 'Civic Design', link: '/civic'}]}/>
+
+
+/*
+<li>
+  <Accordion style={{boxShadow:'none', fontSize:'1.25em', textTransform:'uppercase', borderBottom: '1px solid #585858'}}>
+    <AccordionSummary
+      expandIcon={<ExpandMoreIcon />}
+      aria-controls="panel1a-content"
+      id="panel1a-header"
+      style={{paddingLeft:'0px'}}
+    >
+      pillars
+    </AccordionSummary>
+    <AccordionDetails>
+      <ul>
+        <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/sustainability">Design for Sustainability</NavLink></li>
+        <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/mentalhealth">Mental Health</NavLink></li>
+        <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/civic">Civic Design</NavLink></li>
+      </ul>
+    </AccordionDetails>
+    </Accordion>
+</li>
+*/
+
+/*
+<li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/thirtyyears">Thirty Years</NavLink></li>
+<li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/greenmountain">Welcome to Green Mountain</NavLink></li>
+*/
+
+//, {display: 'Thirty Years', link: '/thirty'}, {display: 'Welcome to Green Mountain', link: '/ethan'}

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import '../app/App.scss';
+import './Hireme.scss';
 import Return from '../return/Return'
+import HubspotForm from 'react-hubspot-form'
 
 const query = `
 {
@@ -91,12 +93,26 @@ function Hireme({ showTopNavMenu }) {
     fontSize: showTopNavMenu ? '3.5em' : '2.5em'
   }
 
+  const formTitle = {
+    textAlign: 'center'
+  }
+
 
   return (
      <div className="hireMePage" style={hireMePage}>
       <div className="illustratedCameo" style={cameo}/>
       <h1 style={hireMeHeader}>Hiring Adam: A Love Story</h1>
       <div className="comic" style={comic}/>
+      <div className="formContainer">
+        <h2 style={formTitle}>Let's keep talking</h2>
+        <HubspotForm
+           portalId='23840634'
+           formId='1b744474-fd9a-44bd-86cf-95f70cc1769e'
+           onSubmit={() => console.log('Submit!')}
+           onReady={(form) => console.log('Form ready!')}
+           loading={<div>Loading...</div>}
+           />
+        </div>
       <Return gray={false} />
      </div>
   )

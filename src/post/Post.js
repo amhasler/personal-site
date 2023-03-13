@@ -65,9 +65,10 @@ function Post({ showTopNavMenu }) {
   const dateToFormat = new Date(page.date);
 
   const postMain = {
-    maxWidth: '1260px',
+    maxWidth: showTopNavMenu ? '1210px' : '545px',
     margin: "0px auto",
-    float: "none"
+    float: "none",
+    padding: '0px 50px'
   }
 
   const formTitle = {

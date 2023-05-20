@@ -19,7 +19,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
-function Header({ showTopNavMenu }) {
+function Header({ showTopNavMenu, showBackground }) {
   const [open, setOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = useState(0)
   const dropdownOpen = Boolean(anchorEl);
@@ -78,7 +78,7 @@ function Header({ showTopNavMenu }) {
   };
 
   return (
-     <header className="site-header">
+     <header className={`site-header ${showBackground ? "background" : ""}`}>
        <NavLink to="/"><div id="nav-icon" style={alignLogo} /></NavLink>
        <nav id="main-nav" style={showNav}>
          <li><NavLink to="/about">story</NavLink></li>
@@ -90,10 +90,10 @@ function Header({ showTopNavMenu }) {
            onClick={handleClick}
          >
            documents
-           <ExpandMoreIcon style={{verticalAlign:'-5px'}}/>
          </li>
 
-         <BasicMenu trigger={"writing"} items={[{display: 'Adventure', link: '/post/badges1'}]}/>
+         <BasicMenu trigger={"Pillars"} items={[{display: 'Civic Design', link: '/civic'}, {display: 'Childhood Adventure', link: '/badges'}]}/>
+         <BasicMenu trigger={"Creative Work"} items={[{display: 'Page One History', link: 'https://www.youtube.com/@pageonekidsculturalhistory3371/featured'}]}/>
          <Menu
            id="basic-menu"
            anchorEl={anchorEl}

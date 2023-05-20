@@ -1,0 +1,30 @@
+header {
+  //background-color: #ADE4FB;
+}
+
+.formContainer {
+  float:right;
+}
+
+.postContent {
+  p:first-of-type {
+    margin-top:0px;
+  }
+}
+
+a {
+  color: #B28859;
+  text-decoration:none;
+  &:hover {
+    text-decoration:underline;
+  }
+}
+
+.civic {
+  .heroContainer {
+    &:first-child {
+      display:table;
+      padding-top: 40px;
+    }
+  }
+}

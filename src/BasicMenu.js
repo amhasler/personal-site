@@ -26,7 +26,6 @@ function BasicMenu({ trigger, items }) {
         onClick={handleClick}
       >
         {trigger}
-        <ExpandMoreIcon style={{verticalAlign:'-5px'}}/>
       </li>
       <Menu
         id="basic-menu"

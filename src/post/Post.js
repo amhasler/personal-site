@@ -92,7 +92,7 @@ function Post({ showTopNavMenu }) {
           onReady={(form) => console.log('Form ready!')}
           loading={<div>Loading...</div>}
           />
-       </div>
+     </div>
      <Return gray={false} />
     </div>
   )

@@ -27,7 +27,13 @@ import {
 
 function App() {
   const [width, setWindowWidth] = useState(0)
+  const [scrollTop, setScrollTop] = useState(0);
+  const handleScroll = (event) => {
+    setScrollTop(window.scrollY);
+  };
+
   useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
 
     updateDimensions();
 
@@ -44,15 +50,21 @@ function App() {
     showTopNavMenu: width > 1200
   }
 
+  const background = {
+    showBackground: scrollTop > 20
+  }
+
+  const path = window.location.pathname.replace(/\//g,'')
+
   return (
     <>
     <CssBaseline />
     <Router>
-      <div className="content">
-      <Header showTopNavMenu={responsive.showTopNavMenu}/>
+      <div className={`content ${path}`}>
+      <Header showBackground={background.showBackground} showTopNavMenu={responsive.showTopNavMenu} />
       <Routes>
         <Route exact path="/" element={<Home showTopNavMenu={responsive.showTopNavMenu} />} />
-        <Route path="/about" element={<About showTopNavMenu={responsive.showTopNavMenu} />} />
+        <Route path="/about" elemensst={<About showTopNavMenu={responsive.showTopNavMenu} />} />
         <Route path="/case1" element={<Case1 showTopNavMenu={responsive.showTopNavMenu} />} />
         <Route path="/case2" element={<Case2 showTopNavMenu={responsive.showTopNavMenu} />} />
         <Route path="/case3" element={<Case3 showTopNavMenu={responsive.showTopNavMenu} />} />

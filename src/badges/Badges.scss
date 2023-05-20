@@ -1,0 +1,21 @@
+.badges {
+  header {
+    position:fixed;
+    &.background {
+      background-color:white;
+      border-bottom:1px solid black;
+    }
+  }
+  .hero {
+    padding-top:40px;
+  }
+  h1 {
+    font-family: 'Life Savers';
+  }
+  h2 {
+    font-size:36px;
+    margin-top:20px;
+    font-family: 'Lato', sans-serif;
+    font-weight:200
+  }
+}

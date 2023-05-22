@@ -96,7 +96,7 @@ function Trailer({ responsive }) {
 
   const subhead = {
     paddingTop:responsive ? '16px' : '18px',
-    marginBottom: responsive ? '34px' : '30px',
+    //marginBottom: responsive ? '34px' : '30px',
     fontSize: responsive ? '2.25em' : '1.5em',
 		marginBottom: responsive ? 0 : 85
 

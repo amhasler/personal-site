@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import '../app/App.scss'
 import './Badges.scss'
-import image from "../img/background.png"
+//import image from "../img/background.png"
 import badges from "../img/badges.png"
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
 import { NavLink } from 'react-router-dom'

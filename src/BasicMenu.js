@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+//import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { NavLink } from 'react-router-dom'
 
 function BasicMenu({ trigger, items }) {

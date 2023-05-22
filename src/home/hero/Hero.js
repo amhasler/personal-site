@@ -54,7 +54,9 @@ function Hero({ responsive }) {
     backgroundRepeat:"no-repeat",
     backgroundSize:"contain",
     height:40,
-    width:40
+    width:40,
+		margin: '0px auto',
+		float: 'none'		
   }
 
   const cameo = {
@@ -68,11 +70,15 @@ function Hero({ responsive }) {
 
   return (
     <div className="hero">
-      <h1>{page.headline}</h1>
-      <h2>{page.heroSubhead}</h2>
-      <div id="transition" style={transition} />
-      <h3>{page.heroPlate}</h3>
-      <div id="hero-cameo" style={cameo} />
+			<div>
+	      <h1>{page.headline}</h1>
+	      <h2>{page.heroSubhead}</h2>
+	      <div id="transition" style={transition} />
+	      <h3>{page.heroPlate}</h3>
+			</div>
+			<div>
+      	<div id="hero-cameo" style={cameo} />
+			</div>
     </div>
   )
 }

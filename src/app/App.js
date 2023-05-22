@@ -18,12 +18,12 @@ import Ethan from '../ethan/Ethan'
 import Post from '../post/Post'
 import CssBaseline from '@mui/material/CssBaseline';
 
-
 import {
-  BrowserRouter as Router,
   Routes,
   Route
 } from "react-router-dom";
+
+import { useLocation } from "react-router-dom";
 
 function App() {
   const [width, setWindowWidth] = useState(0)
@@ -31,6 +31,10 @@ function App() {
   const handleScroll = (event) => {
     setScrollTop(window.scrollY);
   };
+
+  const location = useLocation()
+  const firstPath = location.pathname.split('/')[1];
+  const path = firstPath.replace(/\//g,'')
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -54,33 +58,27 @@ function App() {
     showBackground: scrollTop > 20
   }
 
-  const path = window.location.pathname.replace(/\//g,'')
-
   return (
     <>
     <CssBaseline />
-    <Router>
-      <div className={`content ${path}`}>
-      <Header showBackground={background.showBackground} showTopNavMenu={responsive.showTopNavMenu} />
-      <Routes>
-        <Route exact path="/" element={<Home showTopNavMenu={responsive.showTopNavMenu} />} />
-        <Route path="/about" elemensst={<About showTopNavMenu={responsive.showTopNavMenu} />} />
-        <Route path="/case1" element={<Case1 showTopNavMenu={responsive.showTopNavMenu} />} />
-        <Route path="/case2" element={<Case2 showTopNavMenu={responsive.showTopNavMenu} />} />
-        <Route path="/case3" element={<Case3 showTopNavMenu={responsive.showTopNavMenu} />} />
-        <Route path="/shorts" element={<Shorts showTopNavMenu={responsive.showTopNavMenu} />} />
-        <Route path="/hireme" element={<Hireme showTopNavMenu={responsive.showTopNavMenu} />} />
-        <Route path="/sustainability" element={<Sustainability showTopNavMenu={responsive.showTopNavMenu} />} />
-        <Route path="/mentalhealth" element={<MentalHealth showTopNavMenu={responsive.showTopNavMenu} />} />
-        <Route path="/civic" element={<Civic showTopNavMenu={responsive.showTopNavMenu} />} />
-        <Route path="/badges" element={<Badges showTopNavMenu={responsive.showTopNavMenu} />} />
-        <Route path="/thirty" element={<Thirty showTopNavMenu={responsive.showTopNavMenu} />} />
-        <Route path="/ethan" element={<Ethan showTopNavMenu={responsive.showTopNavMenu} />} />
-        <Route path="/post/:slug" element={<Post showTopNavMenu={responsive.showTopNavMenu} />} />
-      </Routes>
-      </div>
-      <Footer showTopNavMenu={responsive.showTopNavMenu}/>
-    </Router>
+    <div className={`content ${path}`}>
+    <Header showBackground={background.showBackground} showTopNavMenu={responsive.showTopNavMenu} />
+    <Routes>
+      <Route exact path="/" element={<Home showTopNavMenu={responsive.showTopNavMenu} />} />
+      <Route exact path="/about" elemensst={<About showTopNavMenu={responsive.showTopNavMenu} />} />
+      <Route exact path="/case1" element={<Case1 showTopNavMenu={responsive.showTopNavMenu} />} />
+      <Route exact path="/case2" element={<Case2 showTopNavMenu={responsive.showTopNavMenu} />} />
+      <Route exact path="/case3" element={<Case3 showTopNavMenu={responsive.showTopNavMenu} />} />
+      <Route exact path="/shorts" element={<Shorts showTopNavMenu={responsive.showTopNavMenu} />} />
+      <Route exact path="/hireme" element={<Hireme showTopNavMenu={responsive.showTopNavMenu} />} />
+      <Route exact path="/sustainability" element={<Sustainability showTopNavMenu={responsive.showTopNavMenu} />} />
+      <Route exact path="/mentalhealth" element={<MentalHealth showTopNavMenu={responsive.showTopNavMenu} />} />
+      <Route exact path="/civic" element={<Civic showTopNavMenu={responsive.showTopNavMenu} />} />
+      <Route exact path="/badges" element={<Badges showTopNavMenu={responsive.showTopNavMenu} />} />
+      <Route exact path="/post/:slug" element={<Post showTopNavMenu={responsive.showTopNavMenu} />} />
+    </Routes>
+    </div>
+    <Footer showTopNavMenu={responsive.showTopNavMenu}/>}
     </>
   );
 }
@@ -88,3 +86,7 @@ function App() {
 export default App;
 
 // <Route path="/portfolio" element={<Portfolio showTopNavMenu={responsive.showTopNavMenu} />} />
+/*
+<Route path="/thirty" element={<Thirty showTopNavMenu={responsive.showTopNavMenu} />} />
+<Route path="/ethan" element={<Ethan showTopNavMenu={responsive.showTopNavMenu} />} />
+*/

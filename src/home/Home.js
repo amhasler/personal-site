@@ -8,6 +8,7 @@ import Writing from './writing/Writing'
 import PageOne from './pageone/PageOne'
 
 function Home({ showTopNavMenu }) {
+
   //const showNav = {
   //  display: showTopNavMenu ? 'flex' : 'none'
   //}

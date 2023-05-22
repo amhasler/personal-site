@@ -124,7 +124,7 @@ function Civic({ showTopNavMenu }) {
 			  {documentToReactComponents(page.text.json)}
 				<h1 style={postsHeader}>Posts in this pillar:</h1>
 				{collection.items.map(function(object, i){
-					 return <p><NavLink key={i} to={object.slug}>{object.title}</NavLink></p>;
+					 return <p key={i}><NavLink to={`../post/${object.slug}`}>{object.title}</NavLink></p>;
 				 })}
 			</div>
 

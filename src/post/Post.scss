@@ -11,16 +11,25 @@
   }
 }
 */
+.post {
+  h1, h2 {
+    text-align: center;
+    line-height: 1em;
+  }
 
-h1, h2 {
-  text-align: center;
-  line-height: 1em;
-}
+  h2 {
+    font-size: 1.5em;
+    line-height: 1.53em;
+  }
 
-h2 {
-  font-size: 18px;
-}
+  time {
+    font-size: 32px;
+  }
 
-time {
-  font-size: 32px;
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
 }

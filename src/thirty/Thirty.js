@@ -49,7 +49,7 @@ function Thirty({ showTopNavMenu }) {
     <>
      <h1>Thirty Coming soon</h1>
      {page.map(function(object, i){
-        return <p>{object.title}</p>;
+        return <p key={i}>{object.title}</p>;
       })}
     </>
   )

@@ -92,8 +92,8 @@ function Header({ showTopNavMenu, showBackground }) {
            documents
          </li>
 
-         <BasicMenu trigger={"Pillars"} items={[{display: 'Civic Design', link: '/civic'}, {display: 'Childhood Adventure', link: '/badges'}]}/>
-         <BasicMenu trigger={"Creative Work"} items={[{display: 'Page One History', link: 'https://www.youtube.com/@pageonekidsculturalhistory3371/featured'}]}/>
+         <BasicMenu trigger={"Pillars"} items={[{display: 'Public Policy', link: '/civic'}, {display: 'Adventure', link: '/badges'}, {display: 'Sustainability', link: '/sustainability'}, {display: 'Mind and Emotion', link: '/mentalHealth'}]}/>
+
          <Menu
            id="basic-menu"
            anchorEl={anchorEl}
@@ -221,6 +221,8 @@ function Header({ showTopNavMenu, showBackground }) {
 }
 
 export default Header;
+
+// <BasicMenu trigger={"Creative Work"} items={[{display: 'Page One History', link: 'https://www.youtube.com/@pageonekidsculturalhistory3371/featured'}]}/>
 
 //<nav id="navigation">{navMenuItems}</nav>//
 

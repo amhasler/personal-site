@@ -49,7 +49,6 @@ function Sustainability({ showTopNavMenu }) {
         if (errors) {
           console.error(errors);
         }
-				console.log(data)
         // rerender the entire component with new data
        setPage(data.pillarPage);
 			 setCollection(data.blogPostCollection)
@@ -79,11 +78,12 @@ function Sustainability({ showTopNavMenu }) {
 		backgroundRepeat:"repeat-x",
 		backgroundSize:"contain",
 		backgroundPosition:"center",
-		height: showTopNavMenu ? 400 : 600,
+		height: showTopNavMenu ? 500 : 700,
 		display: 'flex',
 	  flexDirection: showTopNavMenu ? 'row' : 'column',
 		//paddingTop: 50,
-		borderBottom: '1px solid black'
+		borderBottom: '1px solid black',
+    paddingTop: '100px'
 	}
 
 	const heroContainer = {
@@ -122,7 +122,7 @@ function Sustainability({ showTopNavMenu }) {
 			  {documentToReactComponents(page.text.json)}
 				<h1 style={postsHeader}>Posts in this pillar:</h1>
 				{collection.items.map(function(object, i){
-					 return <p><NavLink key={i} to={object.slug}>{object.title}</NavLink></p>;
+					 return <p key={i}><NavLink to={`../post/${object.slug}`}>{object.title}</NavLink></p>;
 				 })}
 			</div>
 

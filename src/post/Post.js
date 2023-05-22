@@ -5,22 +5,41 @@ import Return from '../return/Return'
 import { useParams } from 'react-router-dom'
 import HubspotForm from 'react-hubspot-form'
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import Moment from 'react-moment';
+import { NavLink } from 'react-router-dom'
+import RenderOptions from '../RenderOptions'
 
 function Post({ showTopNavMenu }) {
   const [page, setPage] = useState(null);
 
   const query = `query GetBlogPostBySlug($slug: String!) {
-    blogPostCollection(where: {slug: $slug}) {
+    blogPostCollection(where: {slug: $slug}, limit: 1) {
       items {
         title
         slug
         date
+        topic
         postDescription {
           json
         }
         content {
           json
+          links {
+            assets {
+              block {
+                sys {
+                  id
+                }
+                url
+                title
+                width
+                height
+                description
+                contentType
+              }
+            }
+          }
         }
       }
     }
@@ -52,6 +71,8 @@ function Post({ showTopNavMenu }) {
         // rerender the entire component with new data
         setPage(data.blogPostCollection.items[0]);
 
+        console.log(data)
+
       });
   }, [query, slug]);
 
@@ -75,16 +96,38 @@ function Post({ showTopNavMenu }) {
     textAlign: 'center'
   }
 
+  const foot = {
+    textAlign: 'center'
+  }
+
+  let pillar
+  let path
+
+
+  if (page.topic==="mental") {
+    pillar = "Mind and Emotion"
+    path = "/mentalhealth"
+  } else if (page.topic==="sustainability") {
+    pillar = "The Experience of Sustainability"
+    path = "/sustainability"
+  } else if (page.topic === "civic") {
+    pillar = "Design and Public Policy"
+    path = "/civic"
+  } else if (page.topic ==="badges"){
+    pillar = "The Adventurous Kid"
+    path = "/badges"
+  }
+
+  const renderOptions = RenderOptions(page.content.links)
+
   return (
     <div className="container" style={postMain}>
      <h1>{page.title}</h1>
      <h2>{documentToReactComponents(page.postDescription.json)}</h2>
      <h2><Moment format="MMMM Do, YYYY" date={dateToFormat} /></h2>
      <div className="postContent">
-      {documentToReactComponents(page.content.json)}
-     </div>
      <div className="formContainer">
-       <h2 style={formTitle}>Let's keep talking</h2>
+       <h2 style={formTitle}>Lset's keep talking</h2>
        <HubspotForm
           portalId='23840634'
           formId='1b744474-fd9a-44bd-86cf-95f70cc1769e'
@@ -92,6 +135,9 @@ function Post({ showTopNavMenu }) {
           onReady={(form) => console.log('Form ready!')}
           loading={<div>Loading...</div>}
           />
+     </div>
+     {documentToReactComponents(page.content.json, renderOptions)}
+      <p style={foot}><em>This is part of the {pillar} pillar. <NavLink to={path}>Visit the main pillar page</NavLink> to read more.</em></p>
      </div>
      <Return gray={false} />
     </div>

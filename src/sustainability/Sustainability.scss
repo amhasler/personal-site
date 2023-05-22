@@ -1,6 +1,10 @@
 .sustainability {
   header {
-    background-color: #ADE4FB;
+    position:fixed;
+    &.background {
+      background-color:white;
+      border-bottom:1px solid black;
+    }
   }
   .heroContainer {
     &:last-child {

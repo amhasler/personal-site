@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import '../../app/App.scss';
 import './Writing.scss'
+import { NavLink } from 'react-router-dom'
 
 const query = `
 {
@@ -40,6 +41,17 @@ const query = `
         height
       }
       title3
+			thumbnail4 {
+        title
+        description
+        contentType
+        fileName
+        size
+        url
+        width
+        height
+      }
+      title4
     }
   }
 }`
@@ -91,24 +103,31 @@ function Documents({ responsive }) {
     backgroundImage:`url(${page.thumbnail3.url})`
   }
 
+	const box4 = {
+    backgroundImage:`url(${page.thumbnail4.url})`
+  }
+
   return (
      <div className="writing">
       <h2>{page.subhead}</h2>
       <div className="boxContainer" style={boxContainer}>
         <div className="box">
-            <a href="https://medium.com/@amhasler/6c89e678aa8a" target="_blank" rel="noreferrer"><div className="boxThumbnail" style={box1}/></a>
+            <NavLink to="./sustainability"><div className="boxThumbnail" style={box1}/></NavLink>
             <p>{page.title1}</p>
         </div>
         <div className="box">
-          <a href="https://medium.com/user-experience-design-1/human-centered-government-4502599daf0f" rel="noreferrer"><div className="boxThumbnail" style={box2}/></a>
+          <NavLink to="./mentalHealth"><div className="boxThumbnail" style={box2}/></NavLink>
           <p>{page.title2}</p>
         </div>
         <div className="box">
-          <a href="https://medium.com/@amhasler/heirlooms-the-elephant-in-the-room-8a6cec310e2e" rel="noreferrer"><div className="boxThumbnail" style={box3}/></a>
+          <NavLink to="./badges"><div className="boxThumbnail" style={box3}/></NavLink>
           <p>{page.title3}</p>
         </div>
+				<div className="box">
+          <NavLink to="./civic"><div className="boxThumbnail" style={box4}/></NavLink>
+          <p>{page.title4}</p>
+        </div>
       </div>
-      <a href="https://medium.com/@amhasler"><button>View all</button></a>
      </div>
   )
 }

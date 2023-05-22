@@ -97,33 +97,35 @@ function Trailer({ responsive }) {
   const subhead = {
     paddingTop:responsive ? '16px' : '18px',
     marginBottom: responsive ? '34px' : '30px',
-    fontSize: responsive ? '2.25em' : '2em'
+    fontSize: responsive ? '2.25em' : '1.5em',
+		marginBottom: responsive ? 0 : 85
+
   }
 
   const case1 = {
     backgroundImage:`url(${page.case1.url})`,
-    width:responsive ? '220px' : '230px',
-    height:responsive ? '328px' : '344px',
+    width:responsive ? '220px' : '180px',
+    height:responsive ? '328px' : '300px',
     marginBottom: !responsive && '145px'
   }
 
   const case2 = {
     backgroundImage:`url(${page.case2.url})`,
-    width:responsive ? '220px' : '230px',
-    height:responsive ? '328px' : '344px',
+    width:responsive ? '50px' : '180px',
+    height:responsive ? '328px' : '300px',
     marginBottom: !responsive && '145px'
   }
 
   const case3 = {
     backgroundImage:`url(${page.case3.url})`,
-    width:responsive ? '220px' : '230px',
-    height:responsive ? '328px' : '344px'
+    width:responsive ? '220px' : '180px',
+    height:responsive ? '328px' : '300px'
   }
 
   const shorts = {
     backgroundImage:`url(${page.shorts.url})`,
-    width:responsive ? '220px' : '230px',
-    height:responsive ? '328px' : '344px'
+    width:responsive ? '220px' : '180px',
+    height:responsive ? '328px' : '300px'
   }
 
   const caseContainer = {

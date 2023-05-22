@@ -75,7 +75,7 @@ function Sustainability({ showTopNavMenu }) {
 
 	const hero = {
 		backgroundImage:`url(${image})`,
-		backgroundRepeat:"repeat-x",
+		backgroundRepeat:"repeat",
 		backgroundSize:"contain",
 		backgroundPosition:"center",
 		height: showTopNavMenu ? 500 : 700,
@@ -83,16 +83,24 @@ function Sustainability({ showTopNavMenu }) {
 	  flexDirection: showTopNavMenu ? 'row' : 'column',
 		//paddingTop: 50,
 		borderBottom: '1px solid black',
-    paddingTop: '100px'
+    padding: '100px 20px 0px'
 	}
 
-	const heroContainer = {
+	const heroContainer1 = {
 		width: showTopNavMenu ? '49%' : '100%',
 		height: showTopNavMenu ? '100%' : '300px'
 	}
 
+  const heroContainer2 = {
+		width: showTopNavMenu ? '49%' : '100%',
+		height: showTopNavMenu ? '100%' : '300px',
+    paddingTop: showTopNavMenu ? '40px' : 0
+	}
+
 	const heroHeadline = {
-	  verticalAlign: showTopNavMenu ? '40%' : 'middle'
+	  verticalAlign: showTopNavMenu ? '40%' : 'middle',
+    fontSize: showTopNavMenu ? '52px' : '36px',
+
 	}
 
 	const postMain = {
@@ -106,15 +114,19 @@ function Sustainability({ showTopNavMenu }) {
 		textAlign: 'left'
 	}
 
+  const subheader = {
+    marginTop: showTopNavMenu ? '30px' : '0px'
+  }
+
   return (
     <>
 			<div className="hero" style={hero}>
-				<div className="heroContainer" style={heroContainer}>
+				<div className="heroContainer" style={heroContainer1}>
 					<div className="heroImage" style={heroImage} />
 				</div>
-				<div className="heroContainer" style={heroContainer}>
+				<div className="heroContainer" style={heroContainer2}>
 					<h1 style={heroHeadline}>{page.header}</h1>
-					<h2>{page.subheader}</h2>
+					<h2 style={subheader}>{page.subheader}</h2>
 				</div>
 			</div>
 			<div className="postContent" style={postMain}>

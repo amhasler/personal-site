@@ -192,11 +192,14 @@ function Header({ showTopNavMenu, showBackground }) {
                     id="panel1a-header"
                     style={{paddingLeft:'0px'}}
                   >
-                    writing
+                    pillars
                   </AccordionSummary>
                   <AccordionDetails>
                     <ul>
-                      <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/post/badges1">Adventure</NavLink></li>
+                      <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/badges">Adventure</NavLink></li>
+                      <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/sustainability">Sustainability</NavLink></li>
+                      <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/mentalHealth">Mind and Emotion</NavLink></li>
+                      <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/civic">Public Policy</NavLink></li>
                     </ul>
                   </AccordionDetails>
                   </Accordion>

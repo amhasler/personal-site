@@ -9,16 +9,13 @@
   .heroContainer {
     &:last-child {
       display:table;
-      padding-top: 40px;
       h1 {
         font-family: 'Vast Shadow', cursive;
-        font-size: 52px;
         display:table-cell;
-        text-align: center;
+        text-align: zcenter;
         float:left;
       }
       h2 {
-        margin-top:30px;
         width:100%;
         font-size:36px;
         text-align:center;

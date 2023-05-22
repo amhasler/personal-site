@@ -96,7 +96,7 @@ function Sustainability({ showTopNavMenu }) {
 	}
 
 	const heroHeadline = {
-		marginTop:150,
+		marginTop: showTopNavMenu ? 150 : 10,
 	  verticalAlign: showTopNavMenu ? '40%' : 'middle'
 	}
 

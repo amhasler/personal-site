@@ -2,13 +2,9 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  flex-direction: row;
 
   div {
     text-align:center;
-    &:first-child {
-      margin-right: 80px;
-    }
   }
 
   h1 {

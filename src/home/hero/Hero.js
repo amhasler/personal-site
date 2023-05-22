@@ -56,7 +56,7 @@ function Hero({ responsive }) {
     height:40,
     width:40,
 		margin: '0px auto',
-		float: 'none'		
+		float: 'none'
   }
 
   const cameo = {
@@ -68,9 +68,17 @@ function Hero({ responsive }) {
     width:350
   }
 
+	const homeHero = {
+		flexDirection: responsive ? 'row' : 'column'
+	}
+
+	const firstChild = {
+		marginRight: responsive ? 80 : 0
+	}
+
   return (
-    <div className="hero">
-			<div>
+    <div className="hero" style={homeHero}>
+			<div style={firstChild}>
 	      <h1>{page.headline}</h1>
 	      <h2>{page.heroSubhead}</h2>
 	      <div id="transition" style={transition} />

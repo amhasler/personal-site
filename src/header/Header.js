@@ -51,7 +51,7 @@ function Header({ showTopNavMenu, showBackground }) {
     backgroundRepeat:"no-repeat",
     backgroundSize:"contain",
     height:82,
-    width:126,
+    width:85,
     display: showTopNavMenu ? 'none' : open ? 'none' : 'block',
     cursor: 'pointer',
     flex: '0 1 auto',
@@ -94,6 +94,8 @@ function Header({ showTopNavMenu, showBackground }) {
 
          <BasicMenu trigger={"Pillars"} items={[{display: 'Public Policy', link: '/civic'}, {display: 'Adventure', link: '/badges'}, {display: 'Sustainability', link: '/sustainability'}, {display: 'Mind and Emotion', link: '/mentalHealth'}]}/>
 
+         <BasicMenu trigger={"Creative Work"} items={[{display: 'Comic Opera', link: '/ethan'}, {display: 'YA Fiction', link: '/thirty'}, {display: 'Kids Cultural History', link: '/pageone'}]}/>
+
          <Menu
            id="basic-menu"
            anchorEl={anchorEl}
@@ -123,10 +125,10 @@ function Header({ showTopNavMenu, showBackground }) {
        <div id="hamburger-icon" style={alignHamburger} onClick={handleDrawerOpen} />
        <Drawer
           sx={{
-            width: open ? drawerWidth : 0,
+            width: open ? "80%" : 0,
             flexShrink: 0,
             '& .MuiDrawer-paper': {
-              width: open ? drawerWidth : 0,
+              width: open ? "80%" : 0,
             },
           }}
           variant="persistent"
@@ -200,6 +202,25 @@ function Header({ showTopNavMenu, showBackground }) {
                       <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/sustainability">Sustainability</NavLink></li>
                       <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/mentalHealth">Mind and Emotion</NavLink></li>
                       <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/civic">Public Policy</NavLink></li>
+                    </ul>
+                  </AccordionDetails>
+                  </Accordion>
+              </li>
+              <li>
+                <Accordion style={{boxShadow:'none', fontSize:'1.25em', textTransform:'uppercase', borderBottom: '1px solid #585858'}}>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                    style={{paddingLeft:'0px'}}
+                  >
+                    creative work
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <ul>
+                      <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/ethan">Comic Opera</NavLink></li>
+                      <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/thirty">YA Fiction</NavLink></li>
+                      <li style={{marginBottom:'10px'}} onClick={handleDrawerClose}><NavLink to="/pageone">Kids Cultural History</NavLink></li>
                     </ul>
                   </AccordionDetails>
                   </Accordion>

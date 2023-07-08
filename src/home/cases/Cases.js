@@ -98,7 +98,7 @@ function Trailer({ responsive }) {
     paddingTop:responsive ? '16px' : '18px',
     //marginBottom: responsive ? '34px' : '30px',
     fontSize: responsive ? '2.25em' : '1.5em',
-		marginBottom: responsive ? 0 : 85
+		marginBottom: responsive ? 50 : 85
 
   }
 
@@ -106,20 +106,23 @@ function Trailer({ responsive }) {
     backgroundImage:`url(${page.case1.url})`,
     width:responsive ? '220px' : '180px',
     height:responsive ? '328px' : '300px',
-    marginBottom: !responsive && '145px'
+    marginBottom: !responsive && '145px',
+    backgroundSize: 'contain'
   }
 
   const case2 = {
     backgroundImage:`url(${page.case2.url})`,
-    width:responsive ? '50px' : '180px',
+    width:responsive ? '220px' : '180px',
     height:responsive ? '328px' : '300px',
-    marginBottom: !responsive && '145px'
+    marginBottom: !responsive && '145px',
+    backgroundSize: 'contain'
   }
 
   const case3 = {
     backgroundImage:`url(${page.case3.url})`,
     width:responsive ? '220px' : '180px',
-    height:responsive ? '328px' : '300px'
+    height:responsive ? '328px' : '300px',
+    backgroundSize: 'contain'
   }
 
   const shorts = {
@@ -136,7 +139,9 @@ function Trailer({ responsive }) {
   }
 
   const shelf = {
-    width: responsive ? '48%' : '100%'
+    width: responsive ? '50%' : '100%',
+    display: 'flex',
+    justifyContent: 'space-around'
   }
 
 	const link = {}
@@ -147,7 +152,7 @@ function Trailer({ responsive }) {
       <div className="caseContainer" style={caseContainer}>
 				<div style={shelf}>
         <NavLink style={link} to="/case1"><div className="case1 case" style={case1}/></NavLink>
-        <NavLink style={link} to="/case2"><div className="case2 case" style={case2}/></NavLink>
+        <NavLink style={link} to="/case2"><div className="case2 caase" style={case2}/></NavLink>
 				</div>
 				<div style={shelf}>
         <NavLink style={link} to="/case3"><div className="case3 case" style={case3} /></NavLink>

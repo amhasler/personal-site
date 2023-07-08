@@ -67,7 +67,6 @@ function Header({ showTopNavMenu, showBackground }) {
     paddingBottom:'10px'
   }
 
-  const drawerWidth = 360;
 
   const handleDrawerOpen = () => {
     setOpen(true);

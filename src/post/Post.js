@@ -9,6 +9,7 @@ import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
 import Moment from 'react-moment';
 import { NavLink } from 'react-router-dom'
 import RenderOptions from '../RenderOptions'
+import YoutubeEmbed from "../utils/YoutubeEmbed";
 
 function Post({ showTopNavMenu }) {
   const [page, setPage] = useState(null);
@@ -41,6 +42,7 @@ function Post({ showTopNavMenu }) {
             }
           }
         }
+        externalUrl
       }
     }
   }`;
@@ -116,6 +118,15 @@ function Post({ showTopNavMenu }) {
   } else if (page.topic ==="badges"){
     pillar = "The Adventurous Kid"
     path = "/badges"
+  } else if (page.topic ==="pageone"){
+    pillar = "Page One Kids Cultural History"
+    path = "/pageone"
+  } else if (page.topic ==="ethan"){
+    pillar = "Buffa: A Comic Opera about Ethan Allen"
+    path = "/ethan"
+  } else if (page.topic ==="thirty"){
+    pillar = "Thirty Years: A Work of Fiction"
+    path = "/thirty"
   }
 
   const renderOptions = RenderOptions(page.content.links)
@@ -137,6 +148,9 @@ function Post({ showTopNavMenu }) {
           />
      </div>
      {documentToReactComponents(page.content.json, renderOptions)}
+     {page.externalUrl.map(function(object, i){
+        return <YoutubeEmbed embedId={object} />;
+      })}
       <p style={foot}><em>This is part of the {pillar} pillar. <NavLink to={path}>Visit the main pillar page</NavLink> to read more.</em></p>
      </div>
      <Return gray={false} />

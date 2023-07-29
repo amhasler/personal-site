@@ -24,6 +24,14 @@
     background-color: white;
     padding: 0px 10px;
     margin-bottom:10px;
+    a {
+      color: black;
+      &:hover {
+        span {
+        text-decoration: underline;
+        }
+      }
+    }
   }
 
   h2 {

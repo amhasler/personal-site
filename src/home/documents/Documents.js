@@ -62,19 +62,19 @@ function Documents({ responsive }) {
       <h3>{page.header}</h3>
       <div className="boxContainer" style={boxContainer}>
         <div className="box">
-          <h2>Curriculum Vitae</h2>
-					<a href="https://assets.ctfassets.net/8sj1lftovdi0/7EzPspr7kRXint13NhMTHV/2ab239b8fb02967788b90ff41a099519/CV-AdamHasler.pdf" target="_blank" rel="noreferrer">
-	          <p>{page.cvText}</p>
+          <h2>Résumé (extended)</h2>				
+          <p>{page.cvText}</p>
+          <a href="https://assets.ctfassets.net/8sj1lftovdi0/7EzPspr7kRXint13NhMTHV/5cba320e74cc1fa4b85dd25157b75e8b/CV.pdf" target="_blank" rel="noreferrer">
 	          <div className="link">
 	            <span>View now</span>
 	            <div className="arrow" style={arrow} />
 	          </div>
-					</a>
+          </a>
         </div>
         <div className="box">
           <h2>Résumé</h2>
           <p>{page.resumeText}</p>
-          <a href="https://assets.ctfassets.net/8sj1lftovdi0/LkmvJdAzC3ciMuCu6I6Qs/b228429999103de0093e9891c5785a2d/resume-AHaslser.pdf" target="_blank" rel="noreferrer">
+          <a href="https://assets.ctfassets.net/8sj1lftovdi0/LkmvJdAzC3ciMuCu6I6Qs/72381e870fc7daa42453aac4d6577bff/Resume.pdf" target="_blank" rel="noreferrer">
             <div className="link">
               <span>View now</span>
               <div className="arrow" style={arrow} />

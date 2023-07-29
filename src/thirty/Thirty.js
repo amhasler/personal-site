@@ -1,17 +1,35 @@
 import React, { useState, useEffect } from 'react'
-import '../app/App.scss';
+import '../app/App.scss'
+import './Thirty.scss'
+import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
+import { NavLink } from 'react-router-dom'
+import image from '../img/thirty-years-bg.jpg'
+
+import FormContainer from '../formContainer/FormContainer'
 
 const query = `
 {
-	blogPostCollection(where: { topic: "thirty"}) {
-  	items {
+  pillarPage(id: "7bXWOF5wcIjNTBK7I7ANOx") {
+    sys {
+      id
+    }
+    text {
+      json
+    }
+    header
+    subheader
+  }
+  blogPostCollection(where: { topic: "thirty"}) {
+    items {
       title
+      slug
     }
   }
 }`
 
 function Thirty({ showTopNavMenu }) {
   const [page, setPage] = useState(null);
+  const [collection, setCollection] = useState(null)
 
   useEffect(() => {
     window
@@ -30,11 +48,10 @@ function Thirty({ showTopNavMenu }) {
         if (errors) {
           console.error(errors);
         }
-
         // rerender the entire component with new data
-        setPage(data.blogPostCollection.items);
-
-
+       setPage(data.pillarPage);
+       setCollection(data.blogPostCollection)
+       //setCollection(data.blogPostCollection)s
       });
   }, []);
 
@@ -45,19 +62,58 @@ function Thirty({ showTopNavMenu }) {
     return "Loading...";
   }
 
+  const hero = {
+    backgroundImage:`url(${image})`,
+    backgroundRepeat:"no-repeat",
+    backgroundSize:"100%",
+  }
+
+  const heroContainer2 = {
+    width: showTopNavMenu ? '70%' : '100%',
+    height: showTopNavMenu ? '100%' : '300px'
+  }
+
+  const heroHeadline = {
+    verticalAlign: showTopNavMenu ? '40%' : 'middle',
+    fontSize: showTopNavMenu ? '100px' : '36px',
+
+  }
+
+  const postMain = {
+    maxWidth: showTopNavMenu ? '1010px' : '545px',
+    margin: "0px auto",
+    float: "none",
+    padding: '50px 50px'
+  }
+
+  const postsHeader = {
+    textAlign: 'left'
+  }
+
+  const subheader = {
+    //marginTop: showTopNavMenu ? '30px' : '0px'
+  }
+
   return (
     <>
-     <h1>Thirty Coming soon</h1>
-     {page.map(function(object, i){
-        return <p key={i}>{object.title}</p>;
-      })}
+      <div className="hero" style={hero}>
+        <div className="heroContainer" style={heroContainer2}>
+          <h1 style={heroHeadline}>{page.header}</h1>
+          <h2 style={subheader}>{page.subheader}</h2>
+        </div>
+      </div>
+      <div className="postContent" style={postMain}>
+        <FormContainer />
+        {documentToReactComponents(page.text.json)}
+        <h1 style={postsHeader}>Posts in this pillar:</h1>
+        {collection.items.map(function(object, i){
+           return <p key={i}><NavLink to={`../post/${object.slug}`}>{object.title}</NavLink></p>;
+         })}
+      </div>
+
+
     </>
   )
 }
 
 export default Thirty;
-
-//<Breakdown oneNumber={page.breakdown1Number} oneText={page.breakdown1Text} twoNumber={page.breakdown2Number} twoText={page.breakdown2Text}  threeNumber={page.breakdown3Number} threeText={page.breakdown3Text} />
-//<CaseModule left={true} text={page.module1Text} label={page.module1Label} image={page.module1Image.url} />
-//<CaseModule left={false} text={page.module2Text} label={page.module2Label} image={page.module2Image.url}  />
-//<CaseModule left={true} text={page.module3Text} label={page.module3Label} image={page.module3Image.url} />

@@ -1,17 +1,35 @@
 import React, { useState, useEffect } from 'react'
-import '../app/App.scss';
+import '../app/App.scss'
+import './Ethan.scss'
+import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
+import { NavLink } from 'react-router-dom'
+import image from "../img/ornament.png"
+
+import FormContainer from '../formContainer/FormContainer'
 
 const query = `
 {
-	blogPostCollection(where: { topic: "ethan"}) {
-  	items {
+  pillarPage(id: "5M0Gp4t02auLFGBAo5uLoe") {
+    sys {
+      id
+    }
+    text {
+      json
+    }
+    header
+    subheader
+  }
+  blogPostCollection(where: { topic: "ethan"}) {
+    items {
       title
+      slug
     }
   }
 }`
 
 function Ethan({ showTopNavMenu }) {
   const [page, setPage] = useState(null);
+  const [collection, setCollection] = useState(null)
 
   useEffect(() => {
     window
@@ -30,11 +48,10 @@ function Ethan({ showTopNavMenu }) {
         if (errors) {
           console.error(errors);
         }
-
         // rerender the entire component with new data
-        setPage(data.blogPostCollection.items);
-
-
+       setPage(data.pillarPage);
+       setCollection(data.blogPostCollection)
+       //setCollection(data.blogPostCollection)s
       });
   }, []);
 
@@ -45,19 +62,87 @@ function Ethan({ showTopNavMenu }) {
     return "Loading...";
   }
 
+  const hero = {
+    height: showTopNavMenu ? 500 : 700,
+    display: 'flex',
+    backgroundColor: "#D05D48",
+    flexDirection: showTopNavMenu ? 'row' : 'column',
+    //paddingTop: 50,
+    //borderBottom: '1px solid black',
+    padding: '100px 20px 0px',
+    marginTop: -120
+  }
+
+  const heroContainer2 = {
+    width: showTopNavMenu ? '70%' : '100%',
+    height: showTopNavMenu ? '100%' : '300px',
+    paddingTop: showTopNavMenu ? '115px' : 0
+  }
+
+  const heroHeadline = {
+    verticalAlign: showTopNavMenu ? '40%' : 'middle',
+    fontSize: showTopNavMenu ? '100px' : '36px',
+
+  }
+
+  const postMain = {
+    maxWidth: showTopNavMenu ? '1010px' : '545px',
+    margin: "0px auto",
+    float: "none",
+    padding: '50px 50px'
+  }
+
+  const postsHeader = {
+    textAlign: 'left'
+  }
+
+  const subheader = {
+    //marginTop: showTopNavMenu ? '30px' : '0px'
+  }
+
+  const leftOrnament = {
+    backgroundImage:`url(${image})`,
+    backgroundRepeat:"no-repeat",
+    backgroundSize:"contain",
+    backgroundPosition: "center 80%",
+    width: "15%",
+    height: "80%",
+    display: showTopNavMenu ? 'block' : 'none'
+  }
+
+  const rightOrnament = {
+    backgroundImage:`url(${image})`,
+    backgroundRepeat:"no-repeat",
+    backgroundSize:"contain",
+    backgroundPosition: "center 80%",
+    width: "15%",
+    height: "80%",
+    display: showTopNavMenu ? 'block' : 'none',
+    transform: 'scaleX(-1)'
+  }
+
   return (
     <>
-     <h1>Ethan Coming soon</h1>
-     {page.map(function(object, i){
-        return <p key={i}>{object.title}</p>;
-      })}
+      <div className="hero" style={hero}>
+        <div className="ornament" style={leftOrnament}/>
+        <div className="heroContainer" style={heroContainer2}>
+          <h1 style={heroHeadline}>{page.header}</h1>
+          <h2 style={subheader}>{page.subheader}</h2>
+        </div>
+        <div className="ornament" style={rightOrnament} />
+      </div>
+      <div className="postContent" style={postMain}>
+        <FormContainer />
+        {documentToReactComponents(page.text.json)}
+        <h1 style={postsHeader}>Posts in this pillar:</h1>
+        {collection.items.map(function(object, i){
+           return <p key={i}><NavLink to={`../post/${object.slug}`}>{object.title}</NavLink></p>;
+         })}
+      </div>
+
+
     </>
   )
 }
 
 export default Ethan;
-
-//<Breakdown oneNumber={page.breakdown1Number} oneText={page.breakdown1Text} twoNumber={page.breakdown2Number} twoText={page.breakdown2Text}  threeNumber={page.breakdown3Number} threeText={page.breakdown3Text} />
-//<CaseModule left={true} text={page.module1Text} label={page.module1Label} image={page.module1Image.url} />
-//<CaseModule left={false} text={page.module2Text} label={page.module2Label} image={page.module2Image.url}  />
-//<CaseModule left={true} text={page.module3Text} label={page.module3Label} image={page.module3Image.url} />

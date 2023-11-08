@@ -3,7 +3,7 @@ import '../app/App.scss'
 import './Thirty.scss'
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
 import { NavLink } from 'react-router-dom'
-import image from "../img/ornament.png";
+//import image from "../img/ornament.png";
 import FormContainer from '../formContainer/FormContainer'
 
 const query = `
@@ -99,6 +99,7 @@ function Thirty({ showTopNavMenu }) {
     //marginTop: showTopNavMenu ? '30px' : '0px'
   }
 
+/*
   const leftOrnament = {
     backgroundImage:`url(${image})`,
     backgroundRepeat:"no-repeat",
@@ -119,6 +120,7 @@ function Thirty({ showTopNavMenu }) {
     display: showTopNavMenu ? 'block' : 'none',
     transform: 'scaleX(-1)'
   }
+  */
 
   return (
     <>

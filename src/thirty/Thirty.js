@@ -3,8 +3,7 @@ import '../app/App.scss'
 import './Thirty.scss'
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
 import { NavLink } from 'react-router-dom'
-import image from '../img/thirty-years-bg.jpg'
-
+import image from "../img/ornament.png";
 import FormContainer from '../formContainer/FormContainer'
 
 const query = `
@@ -63,14 +62,20 @@ function Thirty({ showTopNavMenu }) {
   }
 
   const hero = {
-    backgroundImage:`url(${image})`,
-    backgroundRepeat:"no-repeat",
-    backgroundSize:"100%",
+    height: showTopNavMenu ? 500 : 700,
+    display: 'flex',
+    backgroundColor: "#D05D48",
+    flexDirection: showTopNavMenu ? 'row' : 'column',
+    //paddingTop: 50,
+    //borderBottom: '1px solid black',
+    padding: '100px 20px 0px',
+    marginTop: -120
   }
 
   const heroContainer2 = {
     width: showTopNavMenu ? '70%' : '100%',
-    height: showTopNavMenu ? '100%' : '300px'
+    height: showTopNavMenu ? '100%' : '300px',
+    paddingTop: showTopNavMenu ? '115px' : 0
   }
 
   const heroHeadline = {
@@ -92,6 +97,27 @@ function Thirty({ showTopNavMenu }) {
 
   const subheader = {
     //marginTop: showTopNavMenu ? '30px' : '0px'
+  }
+
+  const leftOrnament = {
+    backgroundImage:`url(${image})`,
+    backgroundRepeat:"no-repeat",
+    backgroundSize:"contain",
+    backgroundPosition: "center 80%",
+    width: "15%",
+    height: "80%",
+    display: showTopNavMenu ? 'block' : 'none'
+  }
+
+  const rightOrnament = {
+    backgroundImage:`url(${image})`,
+    backgroundRepeat:"no-repeat",
+    backgroundSize:"contain",
+    backgroundPosition: "center 80%",
+    width: "15%",
+    height: "80%",
+    display: showTopNavMenu ? 'block' : 'none',
+    transform: 'scaleX(-1)'
   }
 
   return (

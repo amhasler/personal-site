@@ -66,7 +66,7 @@ function App() {
     <Header showBackground={background.showBackground} showTopNavMenu={responsive.showTopNavMenu} />
     <Routes>
       <Route exact path="/" element={<Home showTopNavMenu={responsive.showTopNavMenu} />} />
-      <Route exact path="/about" elemensst={<About showTopNavMenu={responsive.showTopNavMenu} />} />
+      <Route exact path="/about" element={<About showTopNavMenu={responsive.showTopNavMenu} />} />
       <Route exact path="/case1" element={<Case1 showTopNavMenu={responsive.showTopNavMenu} />} />
       <Route exact path="/case2" element={<Case2 showTopNavMenu={responsive.showTopNavMenu} />} />
       <Route exact path="/case3" element={<Case3 showTopNavMenu={responsive.showTopNavMenu} />} />

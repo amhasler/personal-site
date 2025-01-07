@@ -14,7 +14,7 @@ import MentalHealth from '../mentalHealth/MentalHealth'
 import Civic from '../civic/Civic'
 import Badges from '../badges/Badges'
 import Thirty from '../thirty/Thirty'
-import Ethan from '../ethan/Ethan'
+{/*import Ethan from '../ethan/Ethan'*/}
 import PageOne from '../pageone/PageOne'
 import Post from '../post/Post'
 import CssBaseline from '@mui/material/CssBaseline';

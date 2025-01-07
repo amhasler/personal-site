@@ -95,9 +95,9 @@ function PageOne({ responsive }) {
     backgroundImage:`url(${page.youtube.url})`
   }
 
-  const tiktok = {
+  {/*const tiktok = {
     backgroundImage:`url(${page.tiktok.url})`
-  }
+  }*/}
 
   const mainImage = {
     backgroundImage:`url(${page.mainImage.url})`

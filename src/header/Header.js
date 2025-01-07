@@ -113,8 +113,8 @@ function Header({ showTopNavMenu, showBackground }) {
         <ul>
          <li><div id="mail" style={{ backgroundImage:`url(${mail})`, backgroundRepeat:"no-repeat",backgroundSize:"contain",
             height:42,width:42  }}/></li>
-         //<li><div id="twitter" style={{ backgroundImage:`url(${twitter})`, backgroundRepeat:"no-repeat",backgroundSize:"contain",
-            height:55,width:55  }}/></li>
+         {/*<li><div id="twitter" style={{ backgroundImage:`url(${twitter})`, backgroundRepeat:"no-repeat",backgroundSize:"contain",
+            height:55,width:55  }}/></li>*/}
          <li><div id="instagram" style={{ backgroundImage:`url(${instagram})`, backgroundRepeat:"no-repeat",backgroundSize:"contain",
             height:45,width:45  }}/></li>
          <li><div id="linkedin" style={{ backgroundImage:`url(${linkedin})`, backgroundRepeat:"no-repeat",backgroundSize:"contain",

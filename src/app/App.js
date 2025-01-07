@@ -77,7 +77,7 @@ function App() {
       <Route exact path="/civic" element={<Civic showTopNavMenu={responsive.showTopNavMenu} />} />
       <Route exact path="/badges" element={<Badges showTopNavMenu={responsive.showTopNavMenu} />} />
       <Route path="/thirty" element={<Thirty showTopNavMenu={responsive.showTopNavMenu} />} />
-      //<Route path="/ethan" element={<Ethan showTopNavMenu={responsive.showTopNavMenu} />} />
+      {/*<Route path="/ethan" element={<Ethan showTopNavMenu={responsive.showTopNavMenu} />} />*/}
       <Route path="/pageone" element={<PageOne showTopNavMenu={responsive.showTopNavMenu} />} />
       <Route exact path="/post/:slug" element={<Post showTopNavMenu={responsive.showTopNavMenu} />} />
     </Routes>

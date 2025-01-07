@@ -64,7 +64,7 @@ function Documents({ responsive }) {
         <div className="box">
           <h2>Résumé (extended)</h2>				
           <p>{page.cvText}</p>
-          <a href="https://assets.ctfassets.net/8sj1lftovdi0/7EzPspr7kRXint13NhMTHV/5cba320e74cc1fa4b85dd25157b75e8b/CV.pdf" target="_blank" rel="noreferrer">
+          <a href="https://assets.ctfassets.net/8sj1lftovdi0/6LemyayWyK0gsFc7Er1jn/836e9ee56f542d897b49b81c40876047/CV.pdf" target="_blank" rel="noreferrer">
 	          <div className="link">
 	            <span>View now</span>
 	            <div className="arrow" style={arrow} />
@@ -74,7 +74,7 @@ function Documents({ responsive }) {
         <div className="box">
           <h2>Résumé</h2>
           <p>{page.resumeText}</p>
-          <a href="https://assets.ctfassets.net/8sj1lftovdi0/LkmvJdAzC3ciMuCu6I6Qs/72381e870fc7daa42453aac4d6577bff/Resume.pdf" target="_blank" rel="noreferrer">
+          <a href="https://assets.ctfassets.net/8sj1lftovdi0/74kRumrMMfGnnxvMlK6Q3D/db80e598948c53e2505002d3a0f9d4a3/Resume.pdf" target="_blank" rel="noreferrer">
             <div className="link">
               <span>View now</span>
               <div className="arrow" style={arrow} />

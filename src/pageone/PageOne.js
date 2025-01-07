@@ -94,11 +94,6 @@ function PageOne({ showTopNavMenu }) {
     fontWeight: 'bold'
   }
 
-  const stack = {
-    flexDirection: 'column',
-    padding: '20px 20px'
-  }
-
   const mainImage = {
     height: 500,
     width: 200,
@@ -144,7 +139,7 @@ function PageOne({ showTopNavMenu }) {
       <div className="hero" style={hero}>
         <div className="heroContainer" style={heroContainer1}>
           <div className="mainImage" style={mainImage} />
-          <div className="stack" style={stack}>
+          <div className="stack">
             <a href="https://www.instagram.com/page_one_history/"><div className="stackImage" style={insta} /></a>
             <a href="https://www.tiktok.com/@page_one_history"><div className="stackImage" style={tiktok} /></a>
             <a href="https://www.youtube.com/@pageonekidsculturalhistory3371"><div className="stackImage" style={youtube} /></a>

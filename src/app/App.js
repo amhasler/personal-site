@@ -20,10 +20,6 @@ import Civic from '../civic/Civic'
 import Badges from '../badges/Badges'
 import Post from '../post/Post'
 import CssBaseline from '@mui/material/CssBaseline';
-{/*
-import Thirty from '../thirty/Thirty'
-import PageOne from '../pageone/PageOne'
-*/}
 
 function App() {
   const [width, setWindowWidth] = useState(0)

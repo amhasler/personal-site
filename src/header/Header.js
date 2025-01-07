@@ -93,7 +93,7 @@ function Header({ showTopNavMenu, showBackground }) {
 
          <BasicMenu trigger={"Pillars"} items={[{display: 'Public Policy', link: '/civic'}, {display: 'Adventure', link: '/badges'}, {display: 'Sustainability', link: '/sustainability'}, {display: 'Mind and Emotion', link: '/mentalHealth'}]}/>
 
-         <BasicMenu trigger={"Creative Work"} items={[{display: 'Comic Opera', link: '/ethan'}, {display: 'YA Fiction', link: '/thirty'}, {display: 'Kids Cultural History', link: '/pageone'}]}/>
+         <BasicMenu trigger={"Creative Work"} items={[/*{display: 'Comic Opera', link: '/ethan'},*/ {display: 'YA Fiction', link: '/thirty'}, {display: 'Kids Cultural History', link: '/pageone'}]}/>
 
          <Menu
            id="basic-menu"
@@ -113,7 +113,7 @@ function Header({ showTopNavMenu, showBackground }) {
         <ul>
          <li><div id="mail" style={{ backgroundImage:`url(${mail})`, backgroundRepeat:"no-repeat",backgroundSize:"contain",
             height:42,width:42  }}/></li>
-         <li><div id="twitter" style={{ backgroundImage:`url(${twitter})`, backgroundRepeat:"no-repeat",backgroundSize:"contain",
+         //<li><div id="twitter" style={{ backgroundImage:`url(${twitter})`, backgroundRepeat:"no-repeat",backgroundSize:"contain",
             height:55,width:55  }}/></li>
          <li><div id="instagram" style={{ backgroundImage:`url(${instagram})`, backgroundRepeat:"no-repeat",backgroundSize:"contain",
             height:45,width:45  }}/></li>

@@ -125,7 +125,7 @@ function PageOne({ responsive }) {
         <div className="columnContainer">
           <a href="https://www.instagram.com/page_one_history/"><div className="social" style={instagram} /></a>
           <a href="https://www.youtube.com/@pageonekidsculturalhistory3371"><div className="social" style={youtube} /></a>
-          <a href="https://www.tiktok.com/@page_one_history"><div className="social" style={tiktok} /></a>
+          {/* <a href="https://www.tiktok.com/@page_one_history"><div className="social" style={tiktok} /></a> */}
         </div>
       </div>
       <h5>More seasons bi-monthly!</h5>

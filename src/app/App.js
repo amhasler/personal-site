@@ -1,4 +1,9 @@
 import './App.scss';
+import { useLocation } from "react-router-dom";
+import {
+  Routes,
+  Route
+} from "react-router-dom";
 import React, { useState, useEffect } from 'react'
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
@@ -14,17 +19,10 @@ import MentalHealth from '../mentalHealth/MentalHealth'
 import Civic from '../civic/Civic'
 import Badges from '../badges/Badges'
 import Thirty from '../thirty/Thirty'
-{/*import Ethan from '../ethan/Ethan'*/}
 import PageOne from '../pageone/PageOne'
 import Post from '../post/Post'
 import CssBaseline from '@mui/material/CssBaseline';
-
-import {
-  Routes,
-  Route
-} from "react-router-dom";
-
-import { useLocation } from "react-router-dom";
+{/*import Ethan from '../ethan/Ethan'*/}
 
 function App() {
   const [width, setWindowWidth] = useState(0)

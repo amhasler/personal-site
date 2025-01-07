@@ -95,7 +95,6 @@ function PageOne({ showTopNavMenu }) {
   }
 
   const stack = {
-    display: 'flex',
     flexDirection: 'column',
     padding: '20px 20px'
   }

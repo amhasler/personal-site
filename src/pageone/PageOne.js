@@ -167,7 +167,7 @@ function PageOne({ showTopNavMenu }) {
           </svg>
         </div>
       </div>
-      <div className="postContent" style={postMain}>
+      <div className="postContent">
         <FormContainer />
         {documentToReactComponents(page.text.json)}
         <h1 style={postsHeader}>Posts in this pillar:</h1>

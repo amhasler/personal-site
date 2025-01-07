@@ -94,10 +94,6 @@ function PageOne({ showTopNavMenu }) {
     fontWeight: 'bold'
   }
 
-  const postMain = {
-    padding: '50px 50px'
-  }
-
   const postsHeader = {
     textAlign: 'left'
   }

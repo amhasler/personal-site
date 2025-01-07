@@ -93,7 +93,7 @@ function Header({ showTopNavMenu, showBackground }) {
 
          <BasicMenu trigger={"Pillars"} items={[{display: 'Public Policy', link: '/civic'}, {display: 'Adventure', link: '/badges'}, {display: 'Sustainability', link: '/sustainability'}, {display: 'Mind and Emotion', link: '/mentalHealth'}]}/>
 
-         <BasicMenu trigger={"Creative Work"} items={[/*{display: 'Comic Opera', link: '/ethan'},*/ {display: 'YA Fiction', link: '/thirty'}, {display: 'Kids Cultural History', link: '/pageone'}]}/>
+         {/*<BasicMenu trigger={"Creative Work"} items={[{display: 'Comic Opera', link: '/ethan'}, {display: 'YA Fiction', link: '/thirty'}, {display: 'Kids Cultural History', link: '/pageone'}]}/>*/}
 
          <Menu
            id="basic-menu"
@@ -205,6 +205,7 @@ function Header({ showTopNavMenu, showBackground }) {
                   </AccordionDetails>
                   </Accordion>
               </li>
+              {/*
               <li>
                 <Accordion style={{boxShadow:'none', fontSize:'1.25em', textTransform:'uppercase', borderBottom: '1px solid #585858'}}>
                   <AccordionSummary
@@ -224,6 +225,7 @@ function Header({ showTopNavMenu, showBackground }) {
                   </AccordionDetails>
                   </Accordion>
               </li>
+              */}
             </ul>
           </div>
           <div id="drawer-contact-container" style={{paddingLeft:'10px'}}>

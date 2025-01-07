@@ -18,10 +18,12 @@ import Sustainability from '../sustainability/Sustainability'
 import MentalHealth from '../mentalHealth/MentalHealth'
 import Civic from '../civic/Civic'
 import Badges from '../badges/Badges'
-import Thirty from '../thirty/Thirty'
-import PageOne from '../pageone/PageOne'
 import Post from '../post/Post'
 import CssBaseline from '@mui/material/CssBaseline';
+{/*
+import Thirty from '../thirty/Thirty'
+import PageOne from '../pageone/PageOne'
+*/}
 
 function App() {
   const [width, setWindowWidth] = useState(0)
@@ -73,9 +75,10 @@ function App() {
       <Route exact path="/mentalhealth" element={<MentalHealth showTopNavMenu={responsive.showTopNavMenu} />} />
       <Route exact path="/civic" element={<Civic showTopNavMenu={responsive.showTopNavMenu} />} />
       <Route exact path="/badges" element={<Badges showTopNavMenu={responsive.showTopNavMenu} />} />
-      <Route path="/thirty" element={<Thirty showTopNavMenu={responsive.showTopNavMenu} />} />
-      {/*<Route path="/ethan" element={<Ethan showTopNavMenu={responsive.showTopNavMenu} />} />*/}
+      {/*<Route path="/thirty" element={<Thirty showTopNavMenu={responsive.showTopNavMenu} />} />
+      <Route path="/ethan" element={<Ethan showTopNavMenu={responsive.showTopNavMenu} />} />
       <Route path="/pageone" element={<PageOne showTopNavMenu={responsive.showTopNavMenu} />} />
+      */}
       <Route exact path="/post/:slug" element={<Post showTopNavMenu={responsive.showTopNavMenu} />} />
     </Routes>
     </div>

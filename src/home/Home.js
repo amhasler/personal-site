@@ -23,7 +23,7 @@ function Home({ showTopNavMenu }) {
      <Hero responsive={showTopNavMenu}/>
      <Trailer responsive={showTopNavMenu}/>
      <Cases responsive={showTopNavMenu}/>
-     <Hireme responsive={showTopNavMenu}/>
+     {/*<Hireme responsive={showTopNavMenu}/>*/}
      <Documents responsive={showTopNavMenu}/>
      <Writing responsive={showTopNavMenu}/>
      <PageOne responsive={showTopNavMenu}/>

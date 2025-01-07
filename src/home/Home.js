@@ -2,10 +2,11 @@ import '../app/App.scss';
 import Hero from './hero/Hero'
 import Trailer from './trailer/Trailer'
 import Cases from './cases/Cases'
-{/* import Hireme from './hireme/Hireme' */}
 import Documents from './documents/Documents'
 import Writing from './writing/Writing'
 import PageOne from './pageone/PageOne'
+{/* import Hireme from './hireme/Hireme' */}
+
 
 function Home({ showTopNavMenu }) {
 

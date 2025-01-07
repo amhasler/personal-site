@@ -94,10 +94,6 @@ function PageOne({ showTopNavMenu }) {
     fontWeight: 'bold'
   }
 
-  const postsHeader = {
-    textAlign: 'left'
-  }
-
   const stack = {
     display: 'flex',
     flexDirection: 'column',
@@ -170,7 +166,7 @@ function PageOne({ showTopNavMenu }) {
       <div className="postContent">
         <FormContainer />
         {documentToReactComponents(page.text.json)}
-        <h1 style={postsHeader}>Posts in this pillar:</h1>
+        <h1>Posts in this pillar:</h1>
         {collection.items.map(function(object, i){
            return <p key={i}><NavLink to={`../post/${object.slug}`}>{object.title}</NavLink></p>;
          })}

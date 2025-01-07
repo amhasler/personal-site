@@ -22,7 +22,6 @@ import Thirty from '../thirty/Thirty'
 import PageOne from '../pageone/PageOne'
 import Post from '../post/Post'
 import CssBaseline from '@mui/material/CssBaseline';
-{/*import Ethan from '../ethan/Ethan'*/}
 
 function App() {
   const [width, setWindowWidth] = useState(0)

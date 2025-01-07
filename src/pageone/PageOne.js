@@ -95,7 +95,6 @@ function PageOne({ showTopNavMenu }) {
   }
 
   const postMain = {
-    float: "none",
     padding: '50px 50px'
   }
 

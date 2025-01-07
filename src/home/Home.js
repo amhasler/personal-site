@@ -5,7 +5,6 @@ import Cases from './cases/Cases'
 import Documents from './documents/Documents'
 import Writing from './writing/Writing'
 import PageOne from './pageone/PageOne'
-{/* import Hireme from './hireme/Hireme' */}
 
 
 function Home({ showTopNavMenu }) {

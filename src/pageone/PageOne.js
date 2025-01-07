@@ -95,7 +95,6 @@ function PageOne({ showTopNavMenu }) {
   }
 
   const postMain = {
-    {/*maxWidth: showTopNavMenu ? '1010px' : '545px',*/}
     margin: "0px auto",
     float: "none",
     padding: '50px 50px'
